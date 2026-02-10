@@ -14,7 +14,7 @@ A practical guide to exploring Yggdrasil using the example projects. No prior se
    - For each node: `ygg build-context` → generate code → write files
    - Run tests
 
-4. **Run the app.** For hello-world: `npm install && npm test`. For coffee-shop: `npm run dev` and open http://localhost:3000.
+4. **Run the app.** For hello-world: `npm install && npm test`. For coffee-shop: `npm run dev` and open the app in your browser.
 
 5. **Use other commands.** Once the graph is materialized, you can:
    - `/ygg.drift` — check if code matches the graph
