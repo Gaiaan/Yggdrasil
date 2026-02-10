@@ -18,7 +18,7 @@ jobs:
         working-directory: source/cli
       - run: npm run lint
         working-directory: source/cli
-      - uses: DavidAnson/markdownlint-cli2-action@v18
+      - uses: DavidAnson/markdownlint-cli2-action@v22
         with:
           config: ".markdownlint-cli2.jsonc"
           globs: "**/*.md"
