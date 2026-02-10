@@ -17,6 +17,10 @@ cli_tools: []
 Use this command when the user has a new requirement, feature request,
 bug report, or idea that should be processed through the Yggdrasil graph.
 
+**Workflow discipline:** Changes go brief → plan → apply. Never implement
+before creating a brief and plan. When the user asks "why doesn't X work"
+or "how to fix X": create a brief first. Do not implement.
+
 ## Workflow
 
 1. Ask the user to describe what they need. If they already provided a
@@ -48,6 +52,8 @@ bug report, or idea that should be processed through the Yggdrasil graph.
 ## Rules
 
 - Do NOT modify any graph files (node.yaml, artifacts). This command only creates briefs.
+- Do NOT implement anything: no code, no docs, no graph changes. Only write the brief file.
+- When the user describes a problem or asks for a fix: create a brief first. Do not jump to implementation.
 - Keep the brief in natural language. Do not reference node paths or graph structure.
 - If the user's description is already well-structured, do not force additional questions.
 - When in doubt, ask. A wrong architectural assumption costs more than one extra question. Bias toward asking, not guessing — but always offer a recommended answer so the user can move fast.

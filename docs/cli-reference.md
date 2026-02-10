@@ -24,8 +24,17 @@ ygg init --agent cursor --commands-only   # Update commands only (e.g. after npm
    - `--agent claude` → `.claude/commands/ygg-*.md`
    - `--agent cursor` → `.cursor/commands/ygg-*.md`
    - `--agent gemini` → `.gemini/commands/ygg-*.toml`
-   - `--agent copilot` → `.github/agents/ygg-*.md`
+   - `--agent copilot` → `.github/agents/ygg-*.agent.md`
    - (no flag) → prompts for agent selection
+
+**Adapter format differences:**
+
+| Agent | Key differences |
+|-------|-----------------|
+| Cursor | Canonical markdown, no transformations |
+| Claude Code | Adds `name` field to frontmatter (e.g., `name: ygg-brief`) |
+| Copilot | Outputs `.agent.md`; adds `name`, `tools`; converts `command:` handoffs to `agent:` |
+| Gemini CLI | Converts markdown to TOML; uses `prompt = """..."""` flat format |
 
 **With `--commands-only`:** Only updates agent commands. Does not touch `config.yaml` or directories. Use after `npm update` to refresh command templates.
 

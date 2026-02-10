@@ -6,10 +6,10 @@ Convert canonical markdown command templates to agent-specific formats and insta
 
 | Adapter | Target Directory | Conversion |
 |---------|-----------------|------------|
-| claude.ts | `.claude/commands/` | Direct copy (markdown native) |
+| claude.ts | `.claude/commands/` | Adds `name` for slash command (e.g. ygg-brief) |
 | cursor.ts | `.cursor/commands/` | Direct copy (markdown native) |
-| copilot.ts | `.github/agents/` | Adds `mode: "ygg.<command>"` to frontmatter |
-| gemini.ts | `.gemini/commands/` | Full md→TOML conversion, `$ARGUMENTS` → `{{args}}` |
+| copilot.ts | `.github/agents/` | Outputs `.agent.md`, adds `name`, `tools`, converts handoffs `command`→`agent` |
+| gemini.ts | `.gemini/commands/` | Full md→TOML: `description`, `prompt = """..."""`, `$ARGUMENTS`→`{{args}}` |
 
 ## Interface
 

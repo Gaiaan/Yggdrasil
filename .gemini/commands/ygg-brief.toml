@@ -1,15 +1,6 @@
----
-description: 'Gather requirements and create a brief for graph changes'
-handoffs:
-  - command: /ygg.clarify
-    label: 'Clarify the brief'
-    prompt: 'Run /ygg.clarify to resolve ambiguities in this brief.'
-  - command: /ygg.plan
-    label: 'Plan graph changes'
-    prompt: 'Run /ygg.plan to propose graph changes based on this brief.'
-cli_tools: []
----
+description = """Gather requirements and create a brief for graph changes"""
 
+prompt = """
 # /ygg.brief
 
 ## Context
@@ -18,8 +9,8 @@ Use this command when the user has a new requirement, feature request,
 bug report, or idea that should be processed through the Yggdrasil graph.
 
 **Workflow discipline:** Changes go brief → plan → apply. Never implement
-before creating a brief and plan. When the user asks "why doesn't X work"
-or "how to fix X": create a brief first. Do not implement.
+before creating a brief and plan. When the user asks \"why doesn't X work\"
+or \"how to fix X\": create a brief first. Do not implement.
 
 ## Workflow
 
@@ -31,12 +22,6 @@ or "how to fix X": create a brief first. Do not implement.
    - **Requirements**: What must be done (as a bullet list)
    - **Acceptance Criteria**: How to verify it is done correctly
 
-   **Completeness:** The brief must capture ALL information needed for the graph.
-   No placeholders, no "TBD", no "agent will figure out". Every field, constraint,
-   edge case, and integration point must be spelled out. The graph is the source
-   of truth; code is derived from it. If the brief is vague, the graph will be vague,
-   and materialization will produce wrong code.
-
 3. Ask 2-3 clarifying questions. Always ask when:
    - The requirement implies a **new data model** (what fields? what relations?
      flat or nested? one-to-many or many-to-many?)
@@ -45,15 +30,15 @@ or "how to fix X": create a brief first. Do not implement.
    - There are **architectural choices that could go either way**
      (separate page vs. modal, client state vs. server state, etc.)
      For each question, provide a **recommended answer** based on common
-     practice so the user can accept defaults quickly ("I recommend X because Y.
-     Want to go with that?").
+     practice so the user can accept defaults quickly (\"I recommend X because Y.
+     Want to go with that?\").
      If the user's description is already precise on all of these, say so
      and skip to step 4.
 
 4. Save the brief to `.yggdrasil/.briefs/<slug>.md` where slug is a
    short kebab-case name derived from the description.
 
-5. Inform the user: "Brief created. Run /ygg.plan to propose graph changes."
+5. Inform the user: \"Brief created. Run /ygg.plan to propose graph changes.\"
 
 ## Rules
 
@@ -61,7 +46,6 @@ or "how to fix X": create a brief first. Do not implement.
 - Do NOT implement anything: no code, no docs, no graph changes. Only write the brief file.
 - When the user describes a problem or asks for a fix: create a brief first. Do not jump to implementation.
 - Keep the brief in natural language. Do not reference node paths or graph structure.
-- The brief must be COMPLETE. Everything that will end up in the graph must be in
-  the brief. If something is unspecified, ask. Never leave gaps for "later".
 - If the user's description is already well-structured, do not force additional questions.
 - When in doubt, ask. A wrong architectural assumption costs more than one extra question. Bias toward asking, not guessing — but always offer a recommended answer so the user can move fast.
+"""

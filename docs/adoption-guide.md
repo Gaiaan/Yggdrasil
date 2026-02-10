@@ -65,6 +65,12 @@ The agent resolves dependencies, builds context for each node, and generates cod
 
 Review the output. If something is wrong, refine the graph and rematerialize. Over time, the graph converges on the right level of detail.
 
+### Workflow discipline
+
+All graph changes follow the pipeline: **brief → clarify → plan → apply → materialize**. Do not jump straight to editing graph files or writing code. Start with `/ygg.brief` to capture the requirement, use `/ygg.plan` to propose changes, get approval, then `/ygg.apply` to write them to the graph. Only then materialize.
+
+This prevents incomplete knowledge from entering the graph. See [Workflow](/workflow) for the full pipeline description.
+
 ## Brownfield: Existing Codebase
 
 The more common and more valuable scenario. A team has an existing codebase and wants to use Yggdrasil for new changes or to describe existing modules.

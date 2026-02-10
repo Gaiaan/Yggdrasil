@@ -1,15 +1,6 @@
----
-description: "Propose graph changes based on a brief"
-handoffs:
-  - command: /ygg.apply
-    label: "Apply changes"
-    prompt: "Run /ygg.apply to create the graph files."
-cli_tools:
-  - ygg tree
-  - ygg build-context
-  - ygg affected
----
+description = """Propose graph changes based on a brief"""
 
+prompt = """
 # /ygg.plan
 
 ## Context
@@ -63,17 +54,11 @@ must approve before /ygg.apply. Never skip to implementation.
      across 2+ modules, propose creating a flow in `.yggdrasil/flows/`
    - **Dependency Order**: in what order should new nodes be materialized
 
-   **Artifact content:** For each new or modified node, specify the FULL content
-   of each artifact (description.md, constraints.md, etc.). Transcribe the
-   relevant parts of the brief into the plan. Do not write "add description.md"
-   — write "description.md must contain: [concrete content from brief]". The
-   graph must hold complete knowledge; code is derived from it. No placeholders.
-
 7. Present the plan to the user for review. Wait for explicit approval.
 
 8. Only after user approves the plan:
-   "Plan approved. Run /ygg.apply to create the graph changes,
-    or edit the files manually."
+   \"Plan approved. Run /ygg.apply to create the graph changes,
+    or edit the files manually.\"
 
 ## Rules
 
@@ -89,6 +74,4 @@ must approve before /ygg.apply. Never skip to implementation.
 - When proposing a split of a node that already has materialized code, note that existing code will need rematerialization as smaller files. This is graph refactoring — it precedes code refactoring.
 - Place domain-specific nodes in their domain module (e.g., `shop/product-card/`, not `ui/product-card/`). Place generic reusable nodes in shared modules (e.g., `ui/data-table/`). Use relations to provide cross-domain context.
 - If the brief describes a process spanning 3+ nodes across 2+ modules, propose creating a flow in `.yggdrasil/flows/`. If a relevant flow already exists, propose updating it.
-- The plan must specify complete artifact content. Every piece of info from the
-  brief that belongs in the graph must appear in the plan. No "see brief" — copy
-  the substance into the plan so /ygg.apply has everything to write.
+"""

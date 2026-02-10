@@ -1,0 +1,25 @@
+description = """Detect code changes made outside the graph"""
+
+prompt = """
+# /ygg.drift
+
+## Workflow
+
+1. Run `ygg drift`.
+
+2. For each node with drift:
+   - Show which file changed and a summary of what changed
+   - Ask the user: \"Absorb (update graph to match code) or
+     Reject (rematerialize from graph)?\"
+
+3. For \"Absorb\": help the user update the relevant artifacts in .yggdrasil/
+   to reflect the code change.
+
+4. For \"Reject\": add the node to the rematerialization list and
+   offer to run /ygg.materialize.
+
+## Rules
+
+- Always show the drift before asking for a decision.
+- Do not automatically resolve drift. The user decides.
+"""

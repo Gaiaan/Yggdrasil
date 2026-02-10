@@ -69,7 +69,7 @@ Installed by `ygg init --agent <name>` into the agent's command directory:
 | -------------- | ------------------- | -------- | -------------------------- |
 | Claude Code    | `.claude/commands/` | Markdown | `ygg init --agent claude`  |
 | Cursor         | `.cursor/commands/` | Markdown | `ygg init --agent cursor`  |
-| GitHub Copilot | `.github/agents/`   | Markdown | `ygg init --agent copilot` |
+| GitHub Copilot | `.github/agents/`   | Markdown (.agent.md) | `ygg init --agent copilot` |
 | Gemini CLI     | `.gemini/commands/` | TOML     | `ygg init --agent gemini`  |
 
 ## Documentation

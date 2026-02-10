@@ -12,36 +12,43 @@ cli_tools:
 
 ## Context
 
-Creates and modifies graph files according to a plan or user instructions.
-This is the command that actually changes the graph.
+Creates and modifies graph files according to a plan. This is the command
+that actually changes the graph and code.
+
+**Workflow discipline:** Only apply changes from an approved /ygg.plan.
+Never implement without a plan. If the user asks for changes but no plan
+exists: suggest creating a brief (/ygg.brief) first, then plan (/ygg.plan).
 
 ## Workflow
 
-1. If a plan was created with /ygg.plan, follow it.
-   If no plan exists, ask the user what changes to make.
+1. Require an approved plan from /ygg.plan. If no plan exists, do NOT
+   implement. Say: "Create a brief with /ygg.brief, then run /ygg.plan.
+   After you approve the plan, I'll apply with /ygg.apply."
+2. If a plan exists and was approved, follow it.
 
-2. For each new node:
+3. For each new node:
    a. Create the directory under `.yggdrasil/`
    b. Create `node.yaml` with: name, type, tags (if any), relations (if any), mapping (if known)
    c. Create essential artifacts:
       - `description.md` — what the node does, responsibilities, edge cases
       - Additional artifacts as specified in the plan (constraints.md, interface.yaml, etc.)
 
-3. For each modified node:
+4. For each modified node:
    a. Update `node.yaml` as needed
    b. Update or create artifacts as specified
 
-4. If the plan specifies documentation changes (e.g. in `docs/`,
+5. If the plan specifies documentation changes (e.g. in `docs/`,
    or agent command templates in `source/cli/src/templates/commands/`), apply
    those changes too. Keep documentation consistent with graph and command changes.
 
-5. Run `ygg check` to validate the graph after changes.
+6. Run `ygg check` to validate the graph after changes.
 
-6. If check passes: "Graph updated. Run /ygg.materialize to generate code."
+7. If check passes: "Graph updated. Run /ygg.materialize to generate code."
    If check finds issues: report them and fix.
 
 ## Rules
 
+- Only apply when there is an approved plan from /ygg.plan. Do not implement ad-hoc.
 - Modify graph files in `.yggdrasil/` as specified in the plan.
 - When the plan specifies documentation or template updates, apply those too.
   Do not leave documentation out of sync with the changes.

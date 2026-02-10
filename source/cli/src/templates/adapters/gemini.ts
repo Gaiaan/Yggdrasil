@@ -35,8 +35,7 @@ function convertMdToToml(mdContent: string): string {
   const escapedBody = body.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
   return `description = """${description}"""
 
-[prompt]
-text = """
+prompt = """
 ${escapedBody}
 """
 `;

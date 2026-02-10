@@ -2,6 +2,20 @@
 
 9 canonical markdown prompt files that instruct AI agents how to use the Yggdrasil CLI in structured workflows. These are the "glue" between the mechanical CLI and the AI agent.
 
+## Workflow Discipline
+
+The pipeline is strict: **brief → plan → apply**. Never skip steps.
+
+- When the user describes a problem or asks "how to fix X": create a brief first with /ygg.brief. Do not implement.
+- /ygg.plan produces a plan only. Do not implement. Wait for user approval.
+- /ygg.apply applies only changes from an approved plan. If no plan exists, suggest creating a brief first.
+
+Implementing before plan and apply leads to wasted work. The agent must follow the sequence.
+
+## Graph as Source of Truth
+
+Code is derived from the graph. The graph must hold **complete, concrete knowledge** — no placeholders, no "agent will figure out during materialization". The brief captures everything; the plan specifies full artifact content; /ygg.apply writes it to the graph. References to repo docs: use explicit paths (e.g. `docs/api-spec.md`).
+
 ## Commands
 
 | File | Command | Purpose | CLI Tools Used |

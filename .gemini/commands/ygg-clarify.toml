@@ -1,12 +1,6 @@
----
-description: 'Analyze a brief and ask clarifying questions'
-handoffs:
-  - command: /ygg.plan
-    label: 'Plan graph changes'
-    prompt: 'Run /ygg.plan to propose graph changes.'
-cli_tools: []
----
+description = """Analyze a brief and ask clarifying questions"""
 
+prompt = """
 # /ygg.clarify
 
 ## Context
@@ -28,9 +22,6 @@ Identifies ambiguities and asks targeted questions.
    - Constraints (performance, security, business rules)
    - Terminology (domain terms that could be misinterpreted)
 
-   Goal: the brief must become COMPLETE. Everything that will go into the graph
-   must be unambiguous. No "agent will decide" — the brief must decide.
-
 4. Ask up to 5 questions, one at a time. For each question:
    - State the ambiguity clearly
    - Provide a recommended answer based on common practice
@@ -40,12 +31,11 @@ Identifies ambiguities and asks targeted questions.
    with the Q&A pair.
 
 6. After all questions are resolved:
-   "Brief clarified. Run /ygg.plan to propose graph changes."
+   \"Brief clarified. Run /ygg.plan to propose graph changes.\"
 
 ## Rules
 
 - Do NOT modify graph files. Only modify the brief file.
-- Each clarification must produce a concrete answer. Append it to the brief.
-  The brief must end up with complete, unambiguous information for the graph.
 - Ask questions sequentially, not all at once.
 - If the brief is already clear, say so and suggest moving to /ygg.plan.
+"""

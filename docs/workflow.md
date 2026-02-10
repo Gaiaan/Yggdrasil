@@ -8,6 +8,8 @@ brief -> clarify -> plan -> check -> apply -> materialize
                                            drift <-- (continuous)
 ```
 
+**Principle:** The graph is the source of truth. Code is derived from it. The brief captures everything; the plan specifies full artifact content; apply writes it to the graph. No placeholders — the graph must hold complete knowledge. See [Core Concepts](/concepts#the-graph-holds-complete-knowledge).
+
 For **brownfield adoption**, an alternative entry point exists: `/ygg.ingest` reads existing code and creates blackbox graph nodes. From there, the standard pipeline applies. See [Adoption Guide](/adoption-guide).
 
 ## Stage 1: Brief
@@ -34,7 +36,9 @@ Customers want to reset their password when they forget it.
 - Reset email is sent within 30 seconds
 ```
 
-The brief is deliberately simple. It does not reference the graph, nodes, or architecture. It is the **raw input** that the next stages transform into graph changes.
+The brief is in natural language and does not reference the graph, nodes, or architecture. It is the **raw input** that the next stages transform into graph changes.
+
+**Completeness:** The brief must capture ALL information needed for the graph. No placeholders, no "TBD", no "agent will decide later". Everything that will end up in graph artifacts must be in the brief. If something is unspecified, clarify before planning. The graph is the source of truth — vague briefs produce vague graphs and wrong code.
 
 **Skip when:** You already know which nodes to create or modify.
 
@@ -96,7 +100,11 @@ The brief is deliberately simple. It does not reference the graph, nodes, or arc
 3. auth/auth-api (depends on password-reset-service)
 ```
 
-The plan is a **proposal**, not an execution. The supervisor reviews and decides what to apply. The plan may also propose:
+The plan is a **proposal**, not an execution. The supervisor reviews and decides what to apply.
+
+**Artifact content:** For each new or modified node, the plan must specify the **full content** of each artifact (description.md, constraints.md, etc.). Transcribe the relevant parts of the brief into the plan. Do not write "add description.md" — write the concrete content each artifact must have. /ygg.apply needs everything to write complete graph files. No placeholders.
+
+The plan may also propose:
 
 - **Splitting existing nodes** that have become too coarse for new requirements.
 - **Creating flows** when the brief describes a process spanning multiple modules.
@@ -154,9 +162,9 @@ There is no special `ygg apply` CLI command. "Apply" means **editing files in `.
 - Write `node.yaml` files
 - Add artifact files (descriptions, constraints, interfaces)
 
-The agent can scaffold structure, the supervisor fills in detail, or both. After applying, run `ygg check` to validate.
+**Write complete content.** Every artifact must contain the full, concrete content from the plan. No placeholders, no "TBD", no "implement as needed". The graph is the source of truth — code is derived from it. The materialization agent must not "figure out" anything; everything must be in the artifacts. References to repo docs: use explicit paths (e.g. `docs/api-spec.md`).
 
-The changeset is visible via `git diff .yggdrasil/` — standard git workflow.
+After applying, run `ygg check` to validate. The changeset is visible via `git diff .yggdrasil/` — standard git workflow.
 
 ## Stage 6: Materialize
 

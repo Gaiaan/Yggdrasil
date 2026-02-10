@@ -18,7 +18,7 @@ Yggdrasil introduces a **formal graph layer** between intent and code. AI agents
 
 ## Is the graph a database?
 
-No. The graph is **files** — directories, YAML, markdown. Git handles versioning. No custom storage, no graph database. A changeset is a git diff on `yggdrasil/`.
+No. The graph is **files** — directories, YAML, markdown. Git handles versioning. No custom storage, no graph database. A changeset is a git diff on `.yggdrasil/`.
 
 ## Do I need API keys for the CLI?
 

@@ -154,7 +154,7 @@ Any file in the node's directory that is not `node.yaml` and is not a child node
 
 Yggdrasil does not dictate artifact names, formats, or structure. The only requirement: artifacts should be in formats that an AI agent can read (markdown, YAML, plain text, Mermaid). Binary formats (images, PDFs) can exist but will not be included in context packages.
 
-The more precise the artifacts, the better the materialized code. Adding a constraint file makes the agent respect that constraint. Adding a sequence diagram makes the agent follow that flow.
+Artifacts must contain **complete, concrete knowledge** — not vague suggestions. Code is derived from the graph; if an artifact says "handle errors appropriately" instead of specifying which errors and how, materialization will produce inconsistent code. Write the full detail: constraints, edge cases, interfaces, business rules. See [Core Concepts — The graph holds complete knowledge](/concepts#the-graph-holds-complete-knowledge).
 
 ## config.yaml
 

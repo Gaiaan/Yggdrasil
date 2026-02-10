@@ -40,6 +40,12 @@ Graph → Code. Always.
 
 This is the same principle as Infrastructure as Code (Terraform): you do not SSH into the server and edit files manually — you change the declaration and apply.
 
+### The graph holds complete knowledge
+
+Code is derived from the graph. The graph must hold **complete, concrete knowledge** — no placeholders, no "the agent will figure out during materialization". Everything the code needs must be in the artifacts: descriptions, constraints, edge cases, interfaces. If information is missing from the graph, materialization will produce wrong or inconsistent code.
+
+The pipeline enforces this: the **brief** captures everything, the **plan** specifies full artifact content, **/ygg.apply** writes it to the graph. References to external docs in the repo: use explicit paths (e.g. `docs/api-spec.md`).
+
 ### What happens when someone edits code directly
 
 Reality: people will sometimes edit generated code. Hotfixes, quick workarounds, experiments. Yggdrasil does not prevent this — it **detects** it.

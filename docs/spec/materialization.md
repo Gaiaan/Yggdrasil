@@ -6,6 +6,8 @@ Materialization is the process of transforming a graph node into source code and
 
 Materialization is **not** template-based code generation. It is not scaffolding. The agent reads a rich, multi-layered context document and produces an implementation that respects the described behavior, constraints, interfaces, and standards. The quality of the output is a function of the quality of the graph.
 
+The graph must hold **complete, concrete knowledge** before materialization begins. Vague descriptions produce wrong code. If a node's artifacts say "validate input" without specifying validation rules, the agent will invent rules — and they will be wrong. The fix is always in the graph: add detail, add constraints, add edge cases. See [Core Concepts — The graph holds complete knowledge](/concepts#the-graph-holds-complete-knowledge).
+
 ---
 
 ## The Materialization Loop

@@ -8,12 +8,16 @@ Yggdrasil works with any AI agent that can read markdown and run shell commands.
 |-------|------------------|--------|---------|
 | Claude Code | `.claude/commands/` | Markdown (.md) | `ygg init --agent claude` |
 | Cursor | `.cursor/commands/` | Markdown (.md) | `ygg init --agent cursor` |
-| GitHub Copilot | `.github/agents/` | Markdown (.md) | `ygg init --agent copilot` |
+| GitHub Copilot | `.github/agents/` | Markdown (.agent.md) | `ygg init --agent copilot` |
 | Gemini CLI | `.gemini/commands/` | TOML (.toml) | `ygg init --agent gemini` |
+
+**GitHub Copilot:** Uses Custom Agents (dropdown selection, not slash commands). Select the Ygg agent from the agents dropdown at the bottom of the chat.
 
 ## How Agent Commands Work
 
 Agent commands are files placed in the agent's command directory. When a user types `/ygg.materialize` in their agent's chat, the agent reads the corresponding command file and follows its instructions.
+
+**Workflow discipline:** Changes go brief → plan → apply. Never implement before creating a brief and plan. When the user asks "why doesn't X work" or "how to fix X", create a brief first—do not jump to implementation.
 
 Commands instruct the agent to:
 

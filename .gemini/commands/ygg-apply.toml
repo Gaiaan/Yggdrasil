@@ -1,13 +1,6 @@
----
-description: "Apply graph changes from a plan or instructions"
-handoffs:
-  - command: /ygg.materialize
-    label: "Materialize code"
-    prompt: "Run /ygg.materialize to generate code from the graph."
-cli_tools:
-  - ygg check
----
+description = """Apply graph changes from a plan or instructions"""
 
+prompt = """
 # /ygg.apply
 
 ## Context
@@ -22,20 +15,16 @@ exists: suggest creating a brief (/ygg.brief) first, then plan (/ygg.plan).
 ## Workflow
 
 1. Require an approved plan from /ygg.plan. If no plan exists, do NOT
-   implement. Say: "Create a brief with /ygg.brief, then run /ygg.plan.
-   After you approve the plan, I'll apply with /ygg.apply."
+   implement. Say: \"Create a brief with /ygg.brief, then run /ygg.plan.
+   After you approve the plan, I'll apply with /ygg.apply.\"
 2. If a plan exists and was approved, follow it.
 
 3. For each new node:
    a. Create the directory under `.yggdrasil/`
    b. Create `node.yaml` with: name, type, tags (if any), relations (if any), mapping (if known)
-   c. Create essential artifacts with FULL content from the plan:
-      - `description.md` — complete description, responsibilities, edge cases
-      - Additional artifacts as specified (constraints.md, interface.yaml, etc.)
-   **Do not write placeholders.** Every artifact must contain the complete,
-   concrete content specified in the plan. The graph is the source of truth;
-   code is derived from it. If the plan references docs in the repo, use
-   explicit paths (e.g. "See docs/architecture.md for API contract").
+   c. Create essential artifacts:
+      - `description.md` — what the node does, responsibilities, edge cases
+      - Additional artifacts as specified in the plan (constraints.md, interface.yaml, etc.)
 
 4. For each modified node:
    a. Update `node.yaml` as needed
@@ -47,7 +36,7 @@ exists: suggest creating a brief (/ygg.brief) first, then plan (/ygg.plan).
 
 6. Run `ygg check` to validate the graph after changes.
 
-7. If check passes: "Graph updated. Run /ygg.materialize to generate code."
+7. If check passes: \"Graph updated. Run /ygg.materialize to generate code.\"
    If check finds issues: report them and fix.
 
 ## Rules
@@ -58,13 +47,11 @@ exists: suggest creating a brief (/ygg.brief) first, then plan (/ygg.plan).
   Do not leave documentation out of sync with the changes.
 - Never modify source code files (except templates when the plan specifies).
 - Always run `ygg check` after making changes.
-- Write artifact content with COMPLETE detail. No placeholders, no "TBD",
-  no "implement as needed". The graph must hold all knowledge. Code is derived
-  from the graph — the materialization agent must not "figure out" anything;
-  everything must be in the artifacts. References to repo docs: use explicit
-  paths (e.g. `docs/api-spec.md`).
+- Write artifact content with enough detail for an AI agent to materialize correctly.
+  Think: \"What would I need to know to implement this?\"
 - For `node.yaml`, only include structural metadata. Descriptions, constraints,
   and interfaces belong in artifacts.
 - When splitting a node into children, update the parent's `mapping` (remove or
   adjust it) and set `mapping` on each new child node. Note that existing code
   at the old mapping path will need rematerialization as separate, smaller files.
+"""

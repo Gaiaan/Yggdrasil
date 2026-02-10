@@ -103,7 +103,7 @@ The `ygg` CLI is a mechanical tool — no AI, no API keys. The agent uses it whe
 |-------|------------------|--------|
 | Claude Code | `.claude/commands/` | Markdown |
 | Cursor | `.cursor/commands/` | Markdown |
-| GitHub Copilot | `.github/agents/` | Markdown |
+| GitHub Copilot | `.github/agents/` | Markdown (.agent.md) |
 | Gemini CLI | `.gemini/commands/` | TOML |
 
 ## Try the Coffee Shop Example

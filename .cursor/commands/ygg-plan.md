@@ -17,6 +17,9 @@ cli_tools:
 Analyzes a brief against the current graph and proposes specific changes:
 new nodes, modified nodes, new relations, updated artifacts.
 
+**Workflow discipline:** Do not implement. Only produce a plan. The user
+must approve before /ygg.apply. Never skip to implementation.
+
 ## Prerequisites
 
 - At least one brief file exists in `.yggdrasil/.briefs/`
@@ -60,15 +63,16 @@ new nodes, modified nodes, new relations, updated artifacts.
      across 2+ modules, propose creating a flow in `.yggdrasil/flows/`
    - **Dependency Order**: in what order should new nodes be materialized
 
-7. Present the plan to the user for review.
+7. Present the plan to the user for review. Wait for explicit approval.
 
-8. After user approval:
+8. Only after user approves the plan:
    "Plan approved. Run /ygg.apply to create the graph changes,
     or edit the files manually."
 
 ## Rules
 
 - Do NOT create or modify graph files in this command. Only produce a plan document.
+- Do NOT implement anything: no code, no docs, no graph changes. Only write the plan (text). The user must approve before /ygg.apply.
 - Always explore the graph tree first, but progressively: start with
   `ygg tree --depth 1 --compact`, then drill into relevant modules.
   Never run `ygg tree` without `--depth` on a graph you have not seen before.

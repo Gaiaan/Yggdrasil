@@ -21,7 +21,7 @@ describe('adapters', () => {
     await rm(tmpRoot, { recursive: true, force: true });
   });
 
-  it('Claude adapter copies all 9 files to .claude/commands/', async () => {
+  it('Claude adapter copies all 9 files with name in frontmatter', async () => {
     await installClaude(COMMANDS_DIR, tmpRoot);
 
     const targetDir = path.join(tmpRoot, '.claude', 'commands');
@@ -30,6 +30,7 @@ describe('adapters', () => {
 
     expect(mdFiles).toHaveLength(9);
     const content = await readFile(path.join(targetDir, 'ygg-brief.md'), 'utf-8');
+    expect(content).toContain('name: ygg-brief');
     expect(content).toContain('# /ygg.brief');
     expect(content).toContain('description:');
   });
@@ -46,15 +47,20 @@ describe('adapters', () => {
     expect(content).toContain('# /ygg.materialize');
   });
 
-  it('Copilot adapter copies files with mode in frontmatter', async () => {
+  it('Copilot adapter outputs .agent.md files with name, tools, and handoffs as agent refs', async () => {
     await installCopilot(COMMANDS_DIR, tmpRoot);
 
     const targetDir = path.join(tmpRoot, '.github', 'agents');
     const files = await readdir(targetDir);
-    expect(files.filter((f) => f.startsWith('ygg-'))).toHaveLength(9);
+    const agentFiles = files.filter((f) => f.startsWith('ygg-') && f.endsWith('.agent.md'));
+    expect(agentFiles).toHaveLength(9);
 
-    const content = await readFile(path.join(targetDir, 'ygg-brief.md'), 'utf-8');
-    expect(content).toContain('mode: "ygg.brief"');
+    const content = await readFile(path.join(targetDir, 'ygg-brief.agent.md'), 'utf-8');
+    expect(content).toContain('name: "/ygg.brief"');
+    expect(content).toContain('agent: ygg-clarify');
+    expect(content).toContain('agent: ygg-plan');
+    expect(content).toContain('tools: ["read", "search", "edit", "execute"]');
+    expect(content).not.toContain('cli_tools');
     expect(content).toContain('# /ygg.brief');
   });
 
@@ -69,8 +75,7 @@ describe('adapters', () => {
 
     const content = await readFile(path.join(targetDir, 'ygg-brief.toml'), 'utf-8');
     expect(content).toContain('description = ');
-    expect(content).toContain('[prompt]');
-    expect(content).toContain('text = ');
+    expect(content).toContain('prompt = ');
     expect(content).toContain('/ygg.brief');
     // Ensure $ARGUMENTS would be replaced if present
     expect(content).not.toContain('$ARGUMENTS');
