@@ -55,6 +55,7 @@ tags:
 The supervisor defines nodes — either manually (creating directories and files) or conversationally (using `/ygg.define`).
 
 For a typical system:
+
 1. Create top-level module nodes (auth, users, orders, etc.)
 2. Add description artifacts to each module
 3. Create child nodes for services, interfaces, models within each module
@@ -114,6 +115,7 @@ mapping:
 ```
 
 Blackbox nodes are:
+
 - **Excluded from materialization** — `ygg resolve-deps` skips them
 - **Excluded from context budget checks** — their purpose is to provide context, not to be materialized
 - **Included in `ygg affected`** — when a blackbox node's interface changes, dependents are flagged
@@ -149,6 +151,7 @@ Graph:     [  auth  |  users  |          |  payments  |           ]
 ```
 
 In this example:
+
 - `auth` and `users` are described in the graph (documentation + context) but not materialized
 - `payments` was created through the graph and materialized
 - `orders` and `reports` are not in the graph at all
@@ -163,6 +166,7 @@ Nodes outside the graph simply do not participate in context building, dependenc
 ### Git
 
 Yggdrasil files live in the repository alongside code. Standard git workflow applies:
+
 - Branches for features
 - Pull requests for review
 - Diffs to see what changed in the graph

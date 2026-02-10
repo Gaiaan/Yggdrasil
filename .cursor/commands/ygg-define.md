@@ -11,6 +11,7 @@ cli_tools:
 # /ygg.define
 
 ## Context
+
 Use when the user wants to create a new node or modify an existing one
 through conversation rather than editing files directly.
 
@@ -32,6 +33,7 @@ through conversation rather than editing files directly.
 3. Run `ygg check` to validate.
 
 ## Rules
+
 - Guide the user but do not require answers to every question.
   A node with just a name, type, and description is valid.
 - Show the user what you created. Let them adjust.

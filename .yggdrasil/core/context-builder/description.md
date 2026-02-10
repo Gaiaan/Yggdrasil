@@ -7,6 +7,7 @@ Assembles a 6-layer context package for a specific node. This is the core value 
 - `buildContext(graph: Graph, nodePath: string): Promise<ContextPackage>`
 
 Exported helpers (used by validator for budget checks):
+
 - `buildGlobalLayer(config: YggConfig): ContextLayer`
 - `buildHierarchyLayer(ancestor: GraphNode): ContextLayer`
 - `buildOwnLayer(node: GraphNode): ContextLayer`

@@ -29,5 +29,6 @@ cli_tools:
    offer to run /ygg.materialize.
 
 ## Rules
+
 - Always show the drift before asking for a decision.
 - Do not automatically resolve drift. The user decides.

@@ -14,6 +14,7 @@ Full specification: `documentation/07-agent-commands.md`
 ## Adapters (source/cli/src/templates/adapters/)
 
 Convert canonical markdown commands to agent-specific formats:
+
 - claude.ts, cursor.ts — direct copy (markdown native)
 - copilot.ts — adds `mode` to frontmatter
 - gemini.ts — converts markdown → TOML, replaces $ARGUMENTS → {{args}}

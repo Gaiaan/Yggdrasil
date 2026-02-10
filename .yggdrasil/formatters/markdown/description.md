@@ -25,7 +25,7 @@ Layers: {layer types}
 
 ## Constraints
 
-- Each layer gets a `## ` section header with its label
+- Each layer gets a `##` section header with its label
 - Layers separated by `---` horizontal rules
 - Footer includes token count and layer type summary
 - Materialization target section only included if mapping exists

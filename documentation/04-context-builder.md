@@ -26,6 +26,7 @@ Layer 6: Flows           ← artifacts from flows that list this node as a parti
 **Source:** `yggdrasil/config.yaml`
 
 Contains project-wide information that every node needs:
+
 - Technology stack (language, framework, database, runtime)
 - Coding standards and conventions
 - Testing approach
@@ -39,6 +40,7 @@ This layer is identical for every node in the project.
 The builder walks up the directory tree from the target node to the `yggdrasil/` root, collecting artifacts from each node it passes through.
 
 Example for `orders/order-service/`:
+
 1. `yggdrasil/orders/` — read all artifacts (description.md, business-rules.md, etc.)
 
 If the hierarchy were deeper (`platform/commerce/orders/order-service/`), the builder would collect from `platform/`, then `platform/commerce/`, then `platform/commerce/orders/`.
@@ -196,12 +198,14 @@ Co-locate test files with source (*.spec.ts).
 ## Why This Solves the Context Problem
 
 Traditional agent workflow:
+
 ```
 Agent receives: "Implement OrderService"
 Agent does: searches codebase → reads 50 files → loses track → makes mistakes
 ```
 
 Yggdrasil workflow:
+
 ```
 Agent receives: context package (one document, ~2000-5000 tokens)
 Agent does: reads package → implements exactly what is described → respects interfaces

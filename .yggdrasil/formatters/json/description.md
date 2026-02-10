@@ -9,6 +9,7 @@ Formats a ContextPackage as a JSON string.
 ## Output
 
 Pretty-printed JSON (2-space indent) containing all ContextPackage fields:
+
 - `nodePath`, `nodeName`, `generatedAt` (ISO timestamp)
 - `layers[]` — array with type, label, content per layer
 - `mapping` — string[] or null

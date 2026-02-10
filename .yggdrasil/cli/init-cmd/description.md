@@ -10,6 +10,7 @@
 ## Behavior
 
 **Without `--commands-only`:**
+
 1. Creates directory structure: `.yggdrasil/`, `.yggdrasil/aspects/`, `.yggdrasil/flows/`, `.yggdrasil/.briefs/`
 2. Creates skeleton `config.yaml` with placeholders (name, stack, standards, limits, empty tags)
 3. If `--agent` provided: runs the appropriate adapter to install command templates
@@ -17,6 +18,7 @@
 5. Prints next steps to stdout
 
 **With `--commands-only`:**
+
 1. Installs or updates agent commands only (no config, no directory changes)
 2. Requires `--agent`
 

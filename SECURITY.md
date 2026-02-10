@@ -6,7 +6,7 @@ If you discover a security vulnerability in Yggdrasil, please report it responsi
 
 **Do NOT open a public issue.**
 
-Instead, email: **security@gaiaan.dev** (or use GitHub's private vulnerability reporting feature).
+Instead, email: **<security@gaiaan.dev>** (or use GitHub's private vulnerability reporting feature).
 
 Please include:
 

@@ -48,7 +48,7 @@ Customers want to reset their password when they forget it.
 
 The brief is deliberately simple. It does not reference the graph, nodes, or architecture. It is the **raw input** that the next stages transform into graph changes.
 
-### When to skip
+### When to skip (Brief)
 
 If the supervisor already knows which nodes to create or modify, they can skip briefing and go directly to editing graph files (the "apply" stage).
 
@@ -74,7 +74,7 @@ If the supervisor already knows which nodes to create or modify, they can skip b
 | Constraints | "Is the 3 requests/hour limit per email address or per IP?" |
 | Terminology | "By 'sessions are invalidated' — do you mean JWT tokens are revoked, or session records are deleted?" |
 
-### When to skip
+### When to skip (Clarify)
 
 If the brief is already precise (e.g., written by a domain expert), or if the supervisor will handle ambiguities during planning.
 
@@ -132,7 +132,7 @@ The plan may also propose:
 - **Splitting existing nodes** that have become too coarse for the new requirements. Graph refactoring (splitting nodes, reorganizing hierarchy) is a normal part of the workflow — it happens at the graph level first, and code follows via rematerialization.
 - **Creating flows** when the brief describes a process spanning multiple modules (e.g., checkout → payment → order → confirmation). Flows are created in `yggdrasil/flows/` and provide end-to-end context to all participating nodes.
 
-### When to skip
+### When to skip (Plan)
 
 If the supervisor already knows what graph changes to make. The plan stage is most valuable when the impact is not obvious — e.g., a brief that touches multiple modules.
 
@@ -195,6 +195,7 @@ Check is a **pure mechanical operation** — it reads files and validates struct
 **Output:** Created/modified/deleted files in `yggdrasil/`.
 
 **Who does it:**
+
 - The supervisor manually (create directories, write YAML, write markdown)
 - The agent (`/ygg.apply`) following the plan
 - Both — agent creates scaffolding, supervisor fills in detail
@@ -256,6 +257,7 @@ Detailed materialization mechanics are covered in [08-materialization.md](08-mat
 ### How it works
 
 For each node that has a `mapping` in `node.yaml`:
+
 1. Check if the mapped file(s) exist
 2. Compare file modification timestamps or content hashes against the last materialization
 3. If changed → flag as drift
@@ -263,6 +265,7 @@ For each node that has a `mapping` in `node.yaml`:
 ### Resolution
 
 When drift is detected, the supervisor decides:
+
 - **Absorb:** Update the graph to reflect the code change. The code becomes authoritative for this specific change.
 - **Reject:** Rematerialize the node. The graph overwrites the code change.
 - **Defer:** Acknowledge the drift and deal with it later (not recommended long-term).

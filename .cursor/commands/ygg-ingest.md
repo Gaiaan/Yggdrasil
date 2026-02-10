@@ -11,6 +11,7 @@ cli_tools:
 # /ygg.ingest
 
 ## Context
+
 Use this command to bring existing code into the Yggdrasil graph.
 You read the code, analyze its structure, and create blackbox nodes
 that describe what exists. This is the entry point for brownfield
@@ -63,6 +64,7 @@ context for future work.
 8. After approval, create all nodes and run `ygg check`.
 
 ## Rules
+
 - All nodes created by ingest are `blackbox: true`. The user decides
   later which to un-blackbox and manage through the graph.
 - Describe code as it IS, not as it should be. Honest descriptions

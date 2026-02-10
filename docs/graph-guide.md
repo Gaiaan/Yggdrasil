@@ -137,8 +137,8 @@ description: |
   Use AuditService.log() for all create, update, delete.
 ```
 
-3. Add tags to nodes in `node.yaml`
-4. When building context, matching aspects are injected automatically
+1. Add tags to nodes in `node.yaml`
+2. When building context, matching aspects are injected automatically
 
 ## Relations
 

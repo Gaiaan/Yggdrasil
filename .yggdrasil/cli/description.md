@@ -1,6 +1,7 @@
 # CLI Commands
 
 Thin Commander.js wrappers. Each command:
+
 1. Parses arguments and options via Commander
 2. Calls `loadGraph(process.cwd())` to get the graph
 3. Delegates to a core engine or formatter

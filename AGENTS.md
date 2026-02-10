@@ -16,6 +16,7 @@ Yggdrasil works with any AI agent that can read markdown and run shell commands.
 Agent commands are files placed in the agent's command directory. When a user types `/ygg.materialize` in their agent's chat, the agent reads the corresponding command file and follows its instructions.
 
 Commands instruct the agent to:
+
 1. Call `ygg` CLI tools for mechanical operations (building context, resolving deps, checking consistency)
 2. Use its AI capabilities for creative work (generating code, conversing with the user, making decisions)
 

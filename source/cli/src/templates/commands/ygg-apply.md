@@ -11,6 +11,7 @@ cli_tools:
 # /ygg.apply
 
 ## Context
+
 Creates and modifies graph files according to a plan or user instructions.
 This is the command that actually changes the graph.
 
@@ -40,6 +41,7 @@ This is the command that actually changes the graph.
    If check finds issues: report them and fix.
 
 ## Rules
+
 - Modify graph files in `.yggdrasil/` as specified in the plan.
 - When the plan specifies documentation or template updates, apply those too.
   Do not leave documentation out of sync with the changes.

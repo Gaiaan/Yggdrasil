@@ -13,10 +13,12 @@ cli_tools:
 # /ygg.plan
 
 ## Context
+
 Analyzes a brief against the current graph and proposes specific changes:
 new nodes, modified nodes, new relations, updated artifacts.
 
 ## Prerequisites
+
 - At least one brief file exists in `.yggdrasil/.briefs/`
 
 ## Workflow
@@ -65,6 +67,7 @@ new nodes, modified nodes, new relations, updated artifacts.
     or edit the files manually."
 
 ## Rules
+
 - Do NOT create or modify graph files in this command. Only produce a plan document.
 - Always explore the graph tree first, but progressively: start with
   `ygg tree --depth 1 --compact`, then drill into relevant modules.

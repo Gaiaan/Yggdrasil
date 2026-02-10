@@ -12,6 +12,7 @@ cli_tools:
 # /ygg.materialize
 
 ## Context
+
 Generates implementation code and tests from graph nodes.
 Uses build-context to get precise context for each node,
 then generates code that respects the specification.
@@ -57,6 +58,7 @@ then generates code that respects the specification.
    refining the graph (adding detail, splitting nodes, adding constraints).
 
 ## Rules
+
 - The context package from build-context is your SPECIFICATION — it defines
   what the code should do. You may also read existing code at the node's
   mapping path(s) to decide whether to update incrementally or rewrite from

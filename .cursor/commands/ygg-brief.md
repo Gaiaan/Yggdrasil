@@ -13,6 +13,7 @@ cli_tools: []
 # /ygg.brief
 
 ## Context
+
 Use this command when the user has a new requirement, feature request,
 bug report, or idea that should be processed through the Yggdrasil graph.
 
@@ -45,6 +46,7 @@ bug report, or idea that should be processed through the Yggdrasil graph.
 5. Inform the user: "Brief created. Run /ygg.plan to propose graph changes."
 
 ## Rules
+
 - Do NOT modify any graph files (node.yaml, artifacts). This command only creates briefs.
 - Keep the brief in natural language. Do not reference node paths or graph structure.
 - If the user's description is already well-structured, do not force additional questions.

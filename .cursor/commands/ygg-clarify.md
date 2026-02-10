@@ -10,6 +10,7 @@ cli_tools: []
 # /ygg.clarify
 
 ## Context
+
 Use this command to refine a brief before planning graph changes.
 Identifies ambiguities and asks targeted questions.
 
@@ -39,6 +40,7 @@ Identifies ambiguities and asks targeted questions.
    "Brief clarified. Run /ygg.plan to propose graph changes."
 
 ## Rules
+
 - Do NOT modify graph files. Only modify the brief file.
 - Ask questions sequentially, not all at once.
 - If the brief is already clear, say so and suggest moving to /ygg.plan.

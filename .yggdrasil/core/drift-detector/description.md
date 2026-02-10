@@ -10,7 +10,9 @@ Detects divergence between graph expectations and actual code on disk by compari
 ## Behavior
 
 ### detectDrift
+
 For each node with a mapping:
+
 1. Read the `.drift-state` file (via DriftStateStore)
 2. If no entry exists → status: `unmaterialized`
 3. If mapped file doesn't exist on disk → status: `missing`
@@ -21,6 +23,7 @@ For each node with a mapping:
 Supports multi-file mappings: hashes each file independently, reports drift per file.
 
 ### absorbDrift
+
 1. Read current file(s) at the node's mapping path(s)
 2. Compute SHA-256 hash for each
 3. Update `.drift-state` with new hashes and current timestamp

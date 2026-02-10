@@ -246,7 +246,7 @@ tags:
     conflicts_with: [server-only]
 ```
 
-### Fields
+### Config fields
 
 | Field | Description |
 |---|---|

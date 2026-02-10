@@ -19,6 +19,7 @@
 ## File Structure
 
 Each command markdown file has:
+
 - YAML frontmatter: `description`, `handoffs` (next commands to suggest), `cli_tools` (CLI tools the command uses)
 - `## Context` — when to use this command
 - `## Prerequisites` — what must exist (optional)

@@ -93,6 +93,7 @@ Detect when code was modified outside the graph.
 **Tool:** `ygg drift` or `/ygg.drift`
 
 When drift is found:
+
 - **Absorb** — update graph to match code
 - **Reject** — rematerialize to restore graph's version
 

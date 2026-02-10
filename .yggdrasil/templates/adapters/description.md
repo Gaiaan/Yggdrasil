@@ -14,6 +14,7 @@ Convert canonical markdown command templates to agent-specific formats and insta
 ## Interface
 
 Each adapter exports an install function:
+
 - `installClaude(projectRoot: string, templatesDir: string): Promise<void>`
 - `installCursor(projectRoot: string, templatesDir: string): Promise<void>`
 - `installCopilot(projectRoot: string, templatesDir: string): Promise<void>`

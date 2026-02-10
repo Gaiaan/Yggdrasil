@@ -17,5 +17,6 @@ cli_tools:
 3. If no issues, confirm the graph is consistent.
 
 ## Rules
+
 - This is a read-only command. Do not modify any files.
 - If you can fix an issue automatically (e.g., a typo in a relation target), suggest the fix but do not apply without user confirmation.
