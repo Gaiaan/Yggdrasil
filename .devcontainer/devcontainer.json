@@ -1,0 +1,33 @@
+{
+  "name": "Yggdrasil Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "yzhang.markdown-all-in-one",
+        "bierner.markdown-mermaid",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "vitest.explorer"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-attach.sh",
+  "remoteUser": "node"
+}

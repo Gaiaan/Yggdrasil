@@ -1,0 +1,12 @@
+name: Greeting Service
+type: service
+tags:
+  - public-api
+  - requires-auth
+
+relations:
+  - target: users/user-repository
+    type: reads
+
+mapping:
+  path: src/greeting/greeting.service.ts

@@ -1,0 +1,6 @@
+name: ArtifactReader
+type: parser
+tags:
+  - pure-parser
+mapping:
+  path: source/cli/src/io/artifact-reader.ts

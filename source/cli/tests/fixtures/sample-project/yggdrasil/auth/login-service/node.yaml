@@ -1,0 +1,7 @@
+name: LoginService
+type: service
+relations:
+  - target: users/user-repo
+    type: uses
+mapping:
+  path: src/auth/login.service.ts

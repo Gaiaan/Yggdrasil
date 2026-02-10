@@ -1,0 +1,161 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`context-builder > formatContextJson > produces correct JSON structure (snapshot) 1`] = `
+"{
+  "nodePath": "orders/order-service",
+  "nodeName": "OrderService",
+  "generatedAt": "2026-02-10T12:00:00.000Z",
+  "layers": [
+    {
+      "type": "global",
+      "label": "Global Context",
+      "content": "**Project:** Sample E-Commerce System\\n\\n**Stack:**\\n- language: TypeScript\\n- runtime: Node 22\\n- framework: NestJS\\n- database: PostgreSQL\\n\\n**Standards:**\\nESLint + Prettier configuration.\\nClean Architecture pattern.\\n\\nJest as test framework.\\nTest coverage target: 80%.\\n\\n"
+    },
+    {
+      "type": "hierarchy",
+      "label": "Module Context (orders/)",
+      "content": "### business-rules.md\\n- Min order 10 PLN\\n- Max 50 items per order\\n\\n\\n### description.md\\nOrder management module.\\n"
+    },
+    {
+      "type": "own",
+      "label": "Node: OrderService",
+      "content": "### description.md\\nManages order lifecycle.\\n\\n\\n### state-machine.md\\nStates: Draft → Submitted → Processing → Completed\\n"
+    },
+    {
+      "type": "relational",
+      "label": "auth/auth-api (uses)",
+      "content": "#### openapi.yaml\\nopenapi: 3.0.0\\ninfo:\\n  title: Auth API\\n  version: 1.0.0\\npaths:\\n  /auth/login:\\n    post:\\n      summary: Login\\n      responses:\\n        '200':\\n          description: JWT token\\n"
+    },
+    {
+      "type": "aspects",
+      "label": "Audit Logging (tag: requires-audit)",
+      "content": "name: Audit Logging\\ntag: requires-audit\\n\\ndescription: |\\n  Every data-modifying operation must be logged to the audit_log table.\\n  Log entry format: { userId, action, entityType, entityId, oldState, newState, timestamp }.\\n\\nrequirements:\\n  - \\"Use AuditService.log() for all create, update, and delete operations\\"\\n  - \\"Never log sensitive fields (passwords, tokens) in oldState/newState\\"\\n  - \\"Audit log entries are append-only, never modified or deleted\\"\\n"
+    },
+    {
+      "type": "flows",
+      "label": "Checkout Flow",
+      "content": "### sequence.md\\nsequenceDiagram\\n  participant User\\n  participant AuthAPI\\n  participant OrderService\\n  participant UserRepo\\n\\n  User->>AuthAPI: authenticate\\n  AuthAPI->>UserRepo: verify user\\n  User->>OrderService: submit order\\n  OrderService->>AuthAPI: validate token\\n"
+    }
+  ],
+  "mapping": [
+    "src/orders/order.service.ts"
+  ],
+  "tokenCount": 354
+}"
+`;
+
+exports[`context-builder > formatContextMarkdown > produces correct markdown structure (snapshot) 1`] = `
+"# Context Package: OrderService
+# Path: orders/order-service
+# Generated: 2026-02-10T12:00:00.000Z
+
+---
+
+## Global Context
+
+**Project:** Sample E-Commerce System
+
+**Stack:**
+- language: TypeScript
+- runtime: Node 22
+- framework: NestJS
+- database: PostgreSQL
+
+**Standards:**
+ESLint + Prettier configuration.
+Clean Architecture pattern.
+
+Jest as test framework.
+Test coverage target: 80%.
+
+
+
+---
+
+## Module Context (orders/)
+
+### business-rules.md
+- Min order 10 PLN
+- Max 50 items per order
+
+
+### description.md
+Order management module.
+
+
+---
+
+## Node: OrderService
+
+### description.md
+Manages order lifecycle.
+
+
+### state-machine.md
+States: Draft → Submitted → Processing → Completed
+
+
+---
+
+## auth/auth-api (uses)
+
+#### openapi.yaml
+openapi: 3.0.0
+info:
+  title: Auth API
+  version: 1.0.0
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      responses:
+        '200':
+          description: JWT token
+
+
+---
+
+## Audit Logging (tag: requires-audit)
+
+name: Audit Logging
+tag: requires-audit
+
+description: |
+  Every data-modifying operation must be logged to the audit_log table.
+  Log entry format: { userId, action, entityType, entityId, oldState, newState, timestamp }.
+
+requirements:
+  - "Use AuditService.log() for all create, update, and delete operations"
+  - "Never log sensitive fields (passwords, tokens) in oldState/newState"
+  - "Audit log entries are append-only, never modified or deleted"
+
+
+---
+
+## Checkout Flow
+
+### sequence.md
+sequenceDiagram
+  participant User
+  participant AuthAPI
+  participant OrderService
+  participant UserRepo
+
+  User->>AuthAPI: authenticate
+  AuthAPI->>UserRepo: verify user
+  User->>OrderService: submit order
+  OrderService->>AuthAPI: validate token
+
+
+---
+
+## Materialization Target
+
+**Mapping:** src/orders/order.service.ts
+
+---
+
+Context size: 354 tokens
+Layers: global, hierarchy, own, relational, aspects, flows
+"
+`;

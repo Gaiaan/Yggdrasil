@@ -1,0 +1,7 @@
+name: OrderService
+type: service
+relations:
+  - target: auth/auth-api
+    type: uses
+mapping:
+  path: src/orders/order.service.ts

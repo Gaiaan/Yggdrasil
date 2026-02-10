@@ -1,0 +1,17 @@
+name: GraphLoader
+type: engine
+tags:
+  - core-engine
+relations:
+  - target: io/config-parser
+    type: uses
+  - target: io/node-parser
+    type: uses
+  - target: io/artifact-reader
+    type: uses
+  - target: io/aspect-parser
+    type: uses
+  - target: io/flow-parser
+    type: uses
+mapping:
+  path: source/cli/src/core/graph-loader.ts

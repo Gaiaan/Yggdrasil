@@ -1,0 +1,15 @@
+name: "My Project"
+
+stack:
+  language: ""
+  runtime: ""
+  framework: ""
+
+standards:
+  coding: ""
+  testing: ""
+
+limits:
+  context_warning_tokens: 8000
+
+tags: {}

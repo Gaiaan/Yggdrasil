@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+dist/
+*.tgz
+coverage/
+
+# Yggdrasil test artifacts
+.yggdrasil-test/
+
+# VitePress build output
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# OS
+.DS_Store
+Thumbs.db

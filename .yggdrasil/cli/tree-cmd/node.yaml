@@ -1,0 +1,6 @@
+name: TreeCommand
+type: command
+tags:
+  - cli-command
+mapping:
+  path: source/cli/src/cli/tree.ts

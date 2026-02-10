@@ -1,0 +1,9 @@
+entries:
+  multi/multi-service:
+    path:
+      - src/multi/file-a.ts
+      - src/multi/file-b.ts
+    hash:
+      src/multi/file-a.ts: sha256:479cbaf9c2d379dd36829acde3eb9d698f7a09f676cdc5dc89270c2366c41688
+      src/multi/file-b.ts: sha256:bbb9ecf7a77cc0d8215b276528ba18c484fcc494224421d4280b5cf4e9446bda
+    materialized_at: "2026-02-10T12:00:00Z"

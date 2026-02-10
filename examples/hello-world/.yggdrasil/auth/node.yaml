@@ -1,0 +1,4 @@
+name: Auth Module
+type: module
+tags:
+  - requires-auth

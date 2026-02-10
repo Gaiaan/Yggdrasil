@@ -1,0 +1,6 @@
+name: DriftStateStore
+type: service
+tags:
+  - pure-parser
+mapping:
+  path: source/cli/src/io/drift-state-store.ts

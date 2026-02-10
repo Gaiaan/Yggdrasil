@@ -1,0 +1,6 @@
+name: AuthAPI
+type: interface
+tags:
+  - public-api
+mapping:
+  path: src/auth/auth.controller.ts

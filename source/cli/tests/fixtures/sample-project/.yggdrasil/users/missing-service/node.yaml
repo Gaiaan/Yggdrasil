@@ -1,0 +1,4 @@
+name: MissingService
+type: service
+mapping:
+  path: src/users/missing.service.ts

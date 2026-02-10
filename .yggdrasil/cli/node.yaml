@@ -1,0 +1,4 @@
+name: CLI Commands
+type: module
+tags:
+  - cli-command
