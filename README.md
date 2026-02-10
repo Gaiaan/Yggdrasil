@@ -116,8 +116,8 @@ Then add a feature: edit the graph (e.g. new node for product categories), run `
 
 ## Documentation
 
-- **Docs:** [docs/](docs/) — guides, CLI reference, and full design (VitePress site)
-- **Vision:** [docs/spec/vision.md](docs/spec/vision.md) — problem, thesis, value for greenfield & brownfield
+- **Docs:** [https://gaiaan.github.io/Yggdrasil/](https://gaiaan.github.io/Yggdrasil/) — guides, CLI reference, and full design
+- **Vision:** [https://gaiaan.github.io/Yggdrasil/spec/vision.html](https://gaiaan.github.io/Yggdrasil/spec/vision.html) — problem, thesis, value for greenfield & brownfield
 - **Examples:** [examples/hello-world/](examples/hello-world/), [examples/coffee-shop/](examples/coffee-shop/) — minimal graphs to try
 
 ## Contributing
