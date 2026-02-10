@@ -9,13 +9,11 @@
 
 ## What is Yggdrasil
 
-Yggdrasil is a **CLI toolset for graph-driven software development**. It introduces a formal graph layer (directories with YAML metadata and markdown artifacts) between human intent and generated code. AI agents receive precise, bounded context packages instead of searching through entire codebases — solving the context problem structurally.
+Yggdrasil improves **AI-assisted coding** for both **greenfield** (new projects) and **brownfield** (existing codebases). It introduces a formal graph layer between human intent and generated code — so the agent sees exactly the right context instead of drowning in the whole codebase.
 
-The CLI (`ygg`) is a pure mechanical tool — no AI, no API keys. It reads graph files, builds context, resolves dependencies, validates consistency, detects drift. AI agents (Cursor, Claude Code, Gemini CLI, etc.) do the actual code generation, instructed by agent command files (`/ygg.*`).
+You work mainly through **agent commands** (`/ygg.materialize`, `/ygg.brief`, `/ygg.plan`, etc.) in your AI assistant (Cursor, Claude Code, Gemini CLI, Copilot). The agent reads these commands and uses the **CLI** (`ygg`) as a helper: build-context, resolve-deps, check, drift — pure mechanical operations with no API keys.
 
-```
-Supervisor (human/AI) → Graph (files in .yggdrasil/) → CLI (build-context) → Agent (generates code)
-```
+The graph lives in `.yggdrasil/` (directories = nodes, files = specs). It is the **single source of truth** — a formal "map" of the system (modules, interfaces, relations, constraints) that survives sessions and scales with verification. You edit the graph; the agent materializes code from it. Quality of output is a function of graph quality, not codebase size.
 
 ## Installation
 
@@ -31,9 +29,9 @@ ygg init --agent <name>   # claude | cursor | copilot | gemini
 
 1. **Initialize** a graph in your project: `ygg init --agent cursor`
 2. **Define a node** — create `.yggdrasil/auth/login-service/node.yaml` with metadata, tags, relations
-3. **Build context** — run `ygg build-context auth/login-service` to assemble the context package
-4. **Materialize** — use `/ygg.materialize` in your agent to generate code from the context
-5. **Check consistency** — run `ygg check` to validate the graph
+3. **Materialize** — use `/ygg.materialize` in your agent to generate code from the graph
+4. **Add features** — edit the graph, run `/ygg.materialize` again; use `/ygg.brief` and `/ygg.plan` for bigger changes
+5. **Check & drift** — `/ygg.check` validates the graph; `/ygg.drift` detects manual code edits
 
 ## Concept Map
 
@@ -58,24 +56,13 @@ ygg init --agent <name>   # claude | cursor | copilot | gemini
   orders/              Another node...
     ...
 
-CLI (ygg):           init | build-context | resolve-deps | check | drift | status | affected | tree
 Agent commands:      /ygg.brief | /ygg.clarify | /ygg.plan | /ygg.apply | /ygg.materialize | /ygg.drift | /ygg.define | /ygg.ingest | /ygg.check
+CLI (helper):        init | build-context | resolve-deps | check | drift | status | affected | tree
 ```
 
-## CLI Commands
-
-| Command | Description |
-|---------|-------------|
-| `ygg init` | Initialize a Yggdrasil graph in the current project |
-| `ygg build-context <node-path>` | Build a complete context package for a node |
-| `ygg resolve-deps` | Compute dependency tree and materialization order |
-| `ygg check` | Validate graph consistency and relations |
-| `ygg drift` | Detect code changes outside the graph |
-| `ygg status` | Show graph status and recent changes |
-| `ygg affected <node-path>` | List nodes affected by changes to a node |
-| `ygg tree [path]` | Print the graph as a tree (supports subtree filter, `--depth`, `--compact`) |
-
 ## Agent Commands
+
+These are what you use in your AI assistant. The agent calls the CLI internally.
 
 | Command | Description |
 |---------|-------------|
@@ -89,6 +76,21 @@ Agent commands:      /ygg.brief | /ygg.clarify | /ygg.plan | /ygg.apply | /ygg.m
 | `/ygg.define` | Define a new node interactively |
 | `/ygg.ingest` | Import existing code into the graph |
 
+## CLI (Helper for the Agent)
+
+The `ygg` CLI is a mechanical tool — no AI, no API keys. The agent uses it when you run commands above.
+
+| Command | Description |
+|---------|-------------|
+| `ygg init` | Initialize a Yggdrasil graph in the current project |
+| `ygg build-context <node-path>` | Build a complete context package for a node |
+| `ygg resolve-deps` | Compute dependency tree and materialization order |
+| `ygg check` | Validate graph consistency and relations |
+| `ygg drift` | Detect code changes outside the graph |
+| `ygg status` | Show graph status and recent changes |
+| `ygg affected <node-path>` | List nodes affected by changes to a node |
+| `ygg tree [path]` | Print the graph as a tree (supports subtree filter, `--depth`, `--compact`) |
+
 ## Supported Agents
 
 | Agent | Command Directory | Format |
@@ -98,10 +100,25 @@ Agent commands:      /ygg.brief | /ygg.clarify | /ygg.plan | /ygg.apply | /ygg.m
 | GitHub Copilot | `.github/agents/` | Markdown |
 | Gemini CLI | `.gemini/commands/` | TOML |
 
+## Try the Coffee Shop Example
+
+Want to see Yggdrasil in action? The **coffee shop** is a blog-store: landing, products, blog, curiosities, cart, checkout, and a CMS. ~5 minutes to a running app.
+
+**Setup:**
+
+1. Clone the repo, open `examples/coffee-shop` in your IDE (with Cursor or another supported agent).
+2. Install the CLI: `npm install -g @gaiaan/yggdrasil-cli`
+3. Tell your agent: *"Work in this directory. Run /ygg.materialize to generate the implementation."*
+4. When done: `npm install && npm run dev` — open the app in your browser.
+5. Browse the store, add products via `/admin` (login: `admin@coffee.shop` / `admin123`), try checkout.
+
+Then add a feature: edit the graph (e.g. new node for product categories), run `/ygg.materialize` again. See [Playing with Examples](docs/examples-playing.md) for the full workflow.
+
 ## Documentation
 
 - **Docs:** [docs/](docs/) — guides, CLI reference, and full design (VitePress site)
-- **Example project:** [examples/hello-world/](examples/hello-world/) — minimal graph you can try immediately
+- **Vision:** [docs/spec/vision.md](docs/spec/vision.md) — problem, thesis, value for greenfield & brownfield
+- **Examples:** [examples/hello-world/](examples/hello-world/), [examples/coffee-shop/](examples/coffee-shop/) — minimal graphs to try
 
 ## Contributing
 

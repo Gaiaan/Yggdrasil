@@ -54,6 +54,16 @@ Coffee Shop — Blog & Store
 
 ## Try It
 
+**Setup (from this directory):**
+
+1. Install the CLI: `npm install -g @gaiaan/yggdrasil-cli`
+2. Open this folder in Cursor (or another supported agent).
+3. Tell the agent: *"Work here. Run /ygg.materialize to generate the implementation."*
+4. When done: `npm install && npm run dev` — open the app in your browser.
+5. Browse the store, go to `/admin` (login: `admin@coffee.shop` / `admin123`), add products, try checkout.
+
+**CLI commands to explore:**
+
 ```bash
 ygg tree
 ygg check
@@ -61,5 +71,3 @@ ygg resolve-deps
 ygg build-context storefront/landing-page
 ygg build-context cms/product-editor
 ```
-
-Run `/ygg.materialize` in your agent to generate code.
