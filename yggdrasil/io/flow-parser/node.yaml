@@ -1,9 +1,0 @@
-name: FlowParser
-type: parser
-tags:
-  - pure-parser
-relations:
-  - target: io/artifact-reader
-    type: uses
-mapping:
-  path: source/cli/src/io/flow-parser.ts

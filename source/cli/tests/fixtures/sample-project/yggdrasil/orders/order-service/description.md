@@ -1,1 +1,0 @@
-Manages order lifecycle.

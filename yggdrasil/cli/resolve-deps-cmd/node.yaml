@@ -1,9 +1,0 @@
-name: ResolveDepsCommand
-type: command
-tags:
-  - cli-command
-relations:
-  - target: core/dependency-resolver
-    type: uses
-mapping:
-  path: source/cli/src/cli/resolve-deps.ts

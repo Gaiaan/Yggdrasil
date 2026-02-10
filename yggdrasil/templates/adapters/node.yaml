@@ -1,8 +1,0 @@
-name: Agent Adapters
-type: service
-mapping:
-  path:
-    - source/cli/src/templates/adapters/claude.ts
-    - source/cli/src/templates/adapters/cursor.ts
-    - source/cli/src/templates/adapters/copilot.ts
-    - source/cli/src/templates/adapters/gemini.ts

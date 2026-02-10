@@ -1,4 +1,0 @@
-name: HashUtils
-type: utility
-mapping:
-  path: source/cli/src/utils/hash.ts

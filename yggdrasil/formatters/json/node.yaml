@@ -1,4 +1,0 @@
-name: JsonFormatter
-type: formatter
-mapping:
-  path: source/cli/src/formatters/json.ts

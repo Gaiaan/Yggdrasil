@@ -1,4 +1,0 @@
-name: Agent Command Templates
-type: config
-mapping:
-  path: source/cli/src/templates/commands/

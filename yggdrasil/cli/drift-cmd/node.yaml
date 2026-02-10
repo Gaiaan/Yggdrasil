@@ -1,9 +1,0 @@
-name: DriftCommand
-type: command
-tags:
-  - cli-command
-relations:
-  - target: core/drift-detector
-    type: uses
-mapping:
-  path: source/cli/src/cli/drift.ts

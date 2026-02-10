@@ -1,4 +1,0 @@
-name: MarkdownFormatter
-type: formatter
-mapping:
-  path: source/cli/src/formatters/markdown.ts

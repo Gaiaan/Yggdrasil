@@ -1,4 +1,0 @@
-name: TokenEstimator
-type: utility
-mapping:
-  path: source/cli/src/utils/tokens.ts

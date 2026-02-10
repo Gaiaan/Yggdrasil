@@ -1,9 +1,0 @@
-name: CheckCommand
-type: command
-tags:
-  - cli-command
-relations:
-  - target: core/validator
-    type: uses
-mapping:
-  path: source/cli/src/cli/check.ts

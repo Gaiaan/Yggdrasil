@@ -1,6 +1,0 @@
-name: DependencyResolver
-type: engine
-tags:
-  - core-engine
-mapping:
-  path: source/cli/src/core/dependency-resolver.ts

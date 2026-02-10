@@ -1,2 +1,0 @@
-- Min order 10 PLN
-- Max 50 items per order
