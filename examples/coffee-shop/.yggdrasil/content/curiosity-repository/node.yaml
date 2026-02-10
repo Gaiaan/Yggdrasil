@@ -1,0 +1,5 @@
+name: CuriosityRepository
+type: service
+
+mapping:
+  path: src/content/curiosity.repository.ts

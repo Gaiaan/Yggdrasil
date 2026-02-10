@@ -31,6 +31,15 @@ export default defineConfig({
         ],
       },
       {
+        text: "Examples",
+        items: [
+          { text: "Overview", link: "/examples" },
+          { text: "Playing with Examples", link: "/examples-playing" },
+          { text: "Hello World", link: "/examples/hello-world" },
+          { text: "Coffee Shop", link: "/examples/coffee-shop" },
+        ],
+      },
+      {
         text: "Reference",
         items: [
           { text: "CLI Commands", link: "/cli-reference" },

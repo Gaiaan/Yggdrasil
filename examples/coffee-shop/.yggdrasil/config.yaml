@@ -1,0 +1,30 @@
+name: "Coffee Shop — Blog & Store"
+
+stack:
+  language: TypeScript
+  runtime: Node 22
+  framework: Next.js
+  database: SQLite
+
+standards:
+  coding: |
+    ESLint + Prettier.
+    camelCase for functions, PascalCase for classes.
+    App Router for Next.js (app/ directory).
+  testing: |
+    Vitest as test framework.
+    Co-locate test files with source (*.test.ts).
+
+limits:
+  context_warning_tokens: 8000
+
+tags:
+  public-page:
+    description: "Public-facing page, no auth required"
+    propagates: false
+  requires-auth:
+    description: "Admin endpoint, requires authenticated user"
+    propagates: false
+  requires-audit:
+    description: "Data-modifying operations must be logged"
+    propagates: false

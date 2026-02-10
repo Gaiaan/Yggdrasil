@@ -1,0 +1,16 @@
+name: Curiosities Editor
+type: service
+
+tags:
+  - requires-auth
+  - requires-audit
+
+relations:
+  - target: content/curiosity-repository
+    type: uses
+
+mapping:
+  path:
+    - app/admin/curiosities/page.tsx
+    - app/admin/curiosities/[id]/page.tsx
+    - app/admin/curiosities/actions.ts

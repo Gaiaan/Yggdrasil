@@ -1,0 +1,7 @@
+name: Audit Logging
+tag: requires-audit
+
+description: |
+  Data-modifying operations must be logged to audit_log table.
+  Log entry: { userId, action, entityType, entityId, timestamp }.
+  Never log sensitive fields (passwords, tokens).

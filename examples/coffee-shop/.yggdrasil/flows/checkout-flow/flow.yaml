@@ -1,0 +1,6 @@
+name: Checkout Flow
+nodes:
+  - storefront/cart-page
+  - storefront/checkout-page
+  - orders/order-repository
+  - storefront/order-confirmation

@@ -1,0 +1,5 @@
+name: SessionService
+type: service
+
+mapping:
+  path: src/auth/session.service.ts

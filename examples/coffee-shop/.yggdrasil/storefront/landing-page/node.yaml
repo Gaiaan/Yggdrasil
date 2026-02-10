@@ -1,0 +1,20 @@
+name: Landing Page
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: catalog/product-repository
+    type: reads
+  - target: content/post-repository
+    type: reads
+  - target: content/curiosity-repository
+    type: reads
+  - target: shop-settings/settings-repository
+    type: reads
+
+mapping:
+  path:
+    - app/page.tsx
+    - app/page.test.tsx

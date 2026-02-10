@@ -1,0 +1,5 @@
+name: ProductRepository
+type: service
+
+mapping:
+  path: src/catalog/product.repository.ts

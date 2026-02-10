@@ -1,0 +1,5 @@
+name: CMS
+type: module
+
+tags:
+  - requires-auth

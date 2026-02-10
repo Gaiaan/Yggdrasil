@@ -1,0 +1,8 @@
+name: Next.js App Router Page
+tag: public-page
+
+description: |
+  Nodes tagged `public-page` represent Next.js App Router routes.
+  Materialization must produce: page.tsx (Server Component by default),
+  optional loading.tsx (Suspense skeleton).
+  Paths are relative to app/ directory.

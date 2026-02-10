@@ -1,0 +1,16 @@
+name: Product Editor
+type: service
+
+tags:
+  - requires-auth
+  - requires-audit
+
+relations:
+  - target: catalog/product-repository
+    type: uses
+
+mapping:
+  path:
+    - app/admin/products/page.tsx
+    - app/admin/products/[id]/page.tsx
+    - app/admin/products/actions.ts

@@ -86,4 +86,4 @@ Ensures relations point to existing nodes, tags are defined, and the graph is st
 
 ---
 
-**Next steps:** Read [Core Concepts](/concepts) to understand the graph model, or jump to [Workflow](/workflow) to see the full pipeline from requirements to code.
+**Next steps:** Read [Core Concepts](/concepts) to understand the graph model, jump to [Workflow](/workflow) to see the full pipeline, or [play with an example](/examples-playing) — open one, run `/ygg.materialize`, and add features.

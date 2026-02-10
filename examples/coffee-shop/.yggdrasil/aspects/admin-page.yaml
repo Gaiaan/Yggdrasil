@@ -1,0 +1,7 @@
+name: Admin Page
+tag: requires-auth
+
+description: |
+  Protected admin pages. Must verify user session before rendering.
+  Use Next.js middleware or layout-level auth check.
+  Return 401/redirect to login if unauthenticated.

@@ -1,0 +1,10 @@
+name: Login Page
+type: service
+
+relations:
+  - target: auth/session-service
+    type: uses
+
+mapping:
+  path:
+    - app/admin/login/page.tsx

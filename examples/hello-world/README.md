@@ -42,6 +42,17 @@ ygg affected users/user-repository    # See what depends on user-repository
 ygg status                            # Overview of the graph
 ```
 
+## Materialize
+
+Run `/ygg.materialize` in Cursor (or another supported agent) to generate implementation code and tests from the graph. The agent creates `src/`, `package.json`, and `tsconfig.json`. Then:
+
+```bash
+npm install
+npm test
+```
+
+The `.gitignore` excludes all generated output (`src/`, `package.json`, `tsconfig.json`, `.yggdrasil/.briefs/`, `.yggdrasil/.drift-state`) so the example stays clean — only the graph and documentation are committed.
+
 ## What This Demonstrates
 
 - **Hierarchy**: `auth/token-service` is a child of `auth/` — it inherits module context

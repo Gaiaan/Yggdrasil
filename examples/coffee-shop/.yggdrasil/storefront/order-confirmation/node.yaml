@@ -1,0 +1,13 @@
+name: Order Confirmation
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: orders/order-repository
+    type: reads
+
+mapping:
+  path:
+    - app/checkout/confirmation/page.tsx

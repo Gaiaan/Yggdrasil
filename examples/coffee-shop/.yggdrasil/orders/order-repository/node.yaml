@@ -1,0 +1,5 @@
+name: OrderRepository
+type: service
+
+mapping:
+  path: src/orders/order.repository.ts

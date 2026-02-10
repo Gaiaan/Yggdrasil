@@ -1,0 +1,5 @@
+name: PostRepository
+type: service
+
+mapping:
+  path: src/content/post.repository.ts

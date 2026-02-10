@@ -1,0 +1,15 @@
+name: Shop Settings Editor
+type: service
+
+tags:
+  - requires-auth
+  - requires-audit
+
+relations:
+  - target: shop-settings/settings-repository
+    type: uses
+
+mapping:
+  path:
+    - app/admin/settings/page.tsx
+    - app/admin/settings/actions.ts

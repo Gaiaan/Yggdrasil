@@ -1,0 +1,13 @@
+name: Curiosity Detail
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: content/curiosity-repository
+    type: reads
+
+mapping:
+  path:
+    - app/curiosities/[slug]/page.tsx

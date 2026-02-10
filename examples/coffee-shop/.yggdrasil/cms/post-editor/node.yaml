@@ -1,0 +1,16 @@
+name: Post Editor
+type: service
+
+tags:
+  - requires-auth
+  - requires-audit
+
+relations:
+  - target: content/post-repository
+    type: uses
+
+mapping:
+  path:
+    - app/admin/posts/page.tsx
+    - app/admin/posts/[id]/page.tsx
+    - app/admin/posts/actions.ts

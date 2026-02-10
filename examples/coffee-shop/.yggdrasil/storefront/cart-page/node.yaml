@@ -1,0 +1,14 @@
+name: Cart Page
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: catalog/product-repository
+    type: reads
+
+mapping:
+  path:
+    - app/cart/page.tsx
+    - app/cart/CartSummary.tsx

@@ -1,0 +1,13 @@
+name: Product Detail
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: catalog/product-repository
+    type: reads
+
+mapping:
+  path:
+    - app/products/[slug]/page.tsx

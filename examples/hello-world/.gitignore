@@ -1,0 +1,10 @@
+# Only .gitignore, README, and .yggdrasil/ are committed — everything else ignored
+*
+!.gitignore
+!README.md
+!.yggdrasil/
+!.yggdrasil/**
+
+# Optional/generated state inside .yggdrasil
+.yggdrasil/.briefs/
+.yggdrasil/.drift-state

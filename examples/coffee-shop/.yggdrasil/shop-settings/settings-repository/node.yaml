@@ -1,0 +1,5 @@
+name: SettingsRepository
+type: service
+
+mapping:
+  path: src/shop-settings/settings.repository.ts

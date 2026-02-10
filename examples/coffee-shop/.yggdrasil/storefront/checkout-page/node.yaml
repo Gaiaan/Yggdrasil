@@ -1,0 +1,16 @@
+name: Checkout Page
+type: service
+
+tags:
+  - public-page
+
+relations:
+  - target: catalog/product-repository
+    type: reads
+  - target: orders/order-repository
+    type: uses
+
+mapping:
+  path:
+    - app/checkout/page.tsx
+    - app/checkout/actions.ts
