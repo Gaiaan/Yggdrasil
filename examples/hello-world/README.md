@@ -6,24 +6,24 @@ A minimal Yggdrasil graph demonstrating core concepts: nodes, artifacts, relatio
 
 ```
 yggdrasil/
-├── config.yaml                    # Global: TypeScript/Express stack
-├── aspects/
-│   └── auth-middleware.yaml       # Cross-cutting: JWT auth requirement
-├── auth/                          # Module: authentication
-│   ├── node.yaml
-│   ├── description.md
-│   └── token-service/             # Service: JWT token operations
-│       ├── node.yaml
-│       └── description.md
-├── users/                         # Module: user management
-│   ├── node.yaml
-│   ├── description.md
-│   └── user-repository/           # Service: user data access
-│       ├── node.yaml
-│       └── description.md
-└── greeting/                      # Service: authenticated greeting endpoint
-    ├── node.yaml
-    └── description.md
+  config.yaml                      # Global: TypeScript/Express stack
+  aspects/
+    auth-middleware.yaml           # Cross-cutting: JWT auth requirement
+  auth/                            # Module: authentication
+    node.yaml
+    description.md
+    token-service/                 # Service: JWT token operations
+      node.yaml
+      description.md
+  users/                           # Module: user management
+    node.yaml
+    description.md
+    user-repository/               # Service: user data access
+      node.yaml
+      description.md
+  greeting/                        # Service: authenticated greeting endpoint
+    node.yaml
+    description.md
 ```
 
 ## Try It

@@ -19,37 +19,37 @@ A Yggdrasil example: a coffee e-commerce landing with blog, curiosities, and CMS
 
 ```
 Coffee Shop — Blog & Store
-├── auth/
-│   └── session-service/
-├── catalog/
-│   └── product-repository/
-├── content/
-│   ├── post-repository/
-│   └── curiosity-repository/
-├── shop-settings/
-│   └── settings-repository/
-├── orders/
-│   └── order-repository/
-├── storefront/
-│   ├── landing-page/
-│   ├── product-listing/
-│   ├── product-detail/
-│   ├── blog-listing/
-│   ├── blog-detail/
-│   ├── curiosities-page/
-│   ├── curiosity-detail/
-│   ├── cart-page/
-│   ├── checkout-page/
-│   └── order-confirmation/
-├── cms/
-│   ├── admin-layout/
-│   ├── login-page/
-│   ├── product-editor/
-│   ├── post-editor/
-│   ├── curiosities-editor/
-│   └── shop-settings-editor/
-└── flows/
-    └── checkout-flow/
+  auth/
+    session-service/
+  catalog/
+    product-repository/
+  content/
+    post-repository/
+    curiosity-repository/
+  shop-settings/
+    settings-repository/
+  orders/
+    order-repository/
+  storefront/
+    landing-page/
+    product-listing/
+    product-detail/
+    blog-listing/
+    blog-detail/
+    curiosities-page/
+    curiosity-detail/
+    cart-page/
+    checkout-page/
+    order-confirmation/
+  cms/
+    admin-layout/
+    login-page/
+    product-editor/
+    post-editor/
+    curiosities-editor/
+    shop-settings-editor/
+  flows/
+    checkout-flow/
 ```
 
 ## Try It

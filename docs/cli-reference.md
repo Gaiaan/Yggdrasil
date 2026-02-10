@@ -322,32 +322,32 @@ ygg tree auth/ --depth 1
 
 ```
 My E-Commerce System
-├── auth/ (module) [requires-audit]
-│   ├── login-service/ (service)
-│   │   └── 3 artifacts, mapping: src/modules/auth/login.service.ts
-│   ├── session-manager/ (service)
-│   │   └── 2 artifacts, mapping: src/modules/auth/session.service.ts
-│   └── auth-api/ (interface) [public-api]
-│       └── 2 artifacts, mapping: src/modules/auth/auth.controller.ts
-├── users/ (module)
-│   └── user-repository/ (service)
-└── orders/ (module) [requires-audit]
-    └── order-service/ (service) [requires-auth, requires-audit]
-        └── 3 artifacts, mapping: src/modules/orders/order.service.ts
+  auth/ (module) [requires-audit]
+    login-service/ (service)
+      3 artifacts, mapping: src/modules/auth/login.service.ts
+    session-manager/ (service)
+      2 artifacts, mapping: src/modules/auth/session.service.ts
+    auth-api/ (interface) [public-api]
+      2 artifacts, mapping: src/modules/auth/auth.controller.ts
+  users/ (module)
+    user-repository/ (service)
+  orders/ (module) [requires-audit]
+    order-service/ (service) [requires-auth, requires-audit]
+      3 artifacts, mapping: src/modules/orders/order.service.ts
 ```
 
 **With `--compact`** (hides artifact counts and mapping paths):
 
 ```
 My E-Commerce System
-├── auth/ (module) [requires-audit]
-│   ├── login-service/ (service)
-│   ├── session-manager/ (service)
-│   └── auth-api/ (interface) [public-api]
-├── users/ (module)
-│   └── user-repository/ (service)
-└── orders/ (module) [requires-audit]
-    └── order-service/ (service) [requires-auth, requires-audit]
+  auth/ (module) [requires-audit]
+    login-service/ (service)
+    session-manager/ (service)
+    auth-api/ (interface) [public-api]
+  users/ (module)
+    user-repository/ (service)
+  orders/ (module) [requires-audit]
+    order-service/ (service) [requires-auth, requires-audit]
 ```
 
 | Option | Default | Description |

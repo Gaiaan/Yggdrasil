@@ -38,28 +38,25 @@ ygg init --agent <name>   # claude | cursor | copilot | gemini
 ## Concept Map
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         .yggdrasil/                              │
-│                                                                  │
-│  config.yaml          Global: stack, standards, tag definitions  │
-│  aspects/             Cross-cutting concerns bound to tags       │
-│  flows/               End-to-end processes spanning modules      │
-│  .briefs/             Unstructured requirements input            │
-│  .drift-state         Materialization hashes (auto-generated)    │
-│                                                                  │
-│  auth/                Node (directory with node.yaml)            │
-│  ├── node.yaml        Metadata: name, type, tags, relations     │
-│  ├── overview.md      Artifact: description                     │
-│  ├── login-service/   Child node (nested directory)              │
-│  │   ├── node.yaml                                              │
-│  │   └── *.md         Artifacts: description, diagrams, etc.    │
-│  └── auth-api/        Child node                                 │
-│      ├── node.yaml                                              │
-│      └── openapi.yaml Artifact: API contract                    │
-│                                                                  │
-│  orders/              Another node...                            │
-│  └── ...                                                         │
-└─────────────────────────────────────────────────────────────────┘
+.yggdrasil/
+  config.yaml          Global: stack, standards, tag definitions
+  aspects/             Cross-cutting concerns bound to tags
+  flows/               End-to-end processes spanning modules
+  .briefs/             Unstructured requirements input
+  .drift-state         Materialization hashes (auto-generated)
+
+  auth/                Node (directory with node.yaml)
+    node.yaml          Metadata: name, type, tags, relations
+    overview.md        Artifact: description
+    login-service/     Child node (nested directory)
+      node.yaml
+      *.md             Artifacts: description, diagrams, etc.
+    auth-api/          Child node
+      node.yaml
+      openapi.yaml     Artifact: API contract
+
+  orders/              Another node...
+    ...
 
 CLI (ygg):           init | build-context | resolve-deps | check | drift | status | affected | tree
 Agent commands:      /ygg.brief | /ygg.clarify | /ygg.plan | /ygg.apply | /ygg.materialize | /ygg.drift | /ygg.define | /ygg.ingest | /ygg.check

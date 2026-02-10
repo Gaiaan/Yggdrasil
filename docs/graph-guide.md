@@ -8,30 +8,30 @@ The graph is a directory tree inside `.yggdrasil/`. Each directory with a `node.
 
 ```
 project-root/
-└── .yggdrasil/
-    ├── config.yaml
-    ├── aspects/
-    ├── flows/
-    ├── .briefs/
-    ├── auth/
-    │   ├── node.yaml
-    │   ├── overview.md
-    │   ├── security-policy.md
-    │   ├── login-service/
-    │   │   ├── node.yaml
-    │   │   ├── description.md
-    │   │   └── sequence.md
-    │   └── auth-api/
-    │       ├── node.yaml
-    │       └── openapi.yaml
-    └── orders/
-        ├── node.yaml
-        ├── description.md
-        ├── business-rules.md
-        └── order-service/
-            ├── node.yaml
-            ├── description.md
-            └── state-machine.md
+  .yggdrasil/
+    config.yaml
+    aspects/
+    flows/
+    .briefs/
+    auth/
+      node.yaml
+      overview.md
+      security-policy.md
+      login-service/
+        node.yaml
+        description.md
+        sequence.md
+      auth-api/
+        node.yaml
+        openapi.yaml
+    orders/
+      node.yaml
+      description.md
+      business-rules.md
+      order-service/
+        node.yaml
+        description.md
+        state-machine.md
 ```
 
 ### Rules

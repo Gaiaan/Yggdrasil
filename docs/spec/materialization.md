@@ -11,42 +11,42 @@ Materialization is **not** template-based code generation. It is not scaffolding
 ## The Materialization Loop
 
 ```
-       ┌─────────────────────────────────┐
-       │        Supervisor                │
-       │  (defines/refines graph)         │
-       └──────────┬──────────────────────┘
-                  │ edits .yggdrasil/ files
-                  ▼
-       ┌─────────────────────────────────┐
-       │        Graph                     │
-       │  (node.yaml + artifacts)         │
-       └──────────┬──────────────────────┘
-                  │ ygg build-context
-                  ▼
-       ┌─────────────────────────────────┐
-       │     Context Package              │
-       │  (single document)               │
-       └──────────┬──────────────────────┘
-                  │ agent reads and implements
-                  ▼
-       ┌─────────────────────────────────┐
-       │     Code + Tests                 │
-       │  (written to mapping path)       │
-       └──────────┬──────────────────────┘
-                  │ run tests
-                  ▼
-       ┌─────────────────────────────────┐
-       │     Test Results                 │
-       └──────────┬──────────────────────┘
-                  │
-            ┌─────┴─────┐
-            │           │
-         PASS         FAIL
-            │           │
-         Done      Supervisor refines graph
-                   (does NOT edit code)
-                        │
-                        └──→ back to top
+       +---------------------------------+
+       |        Supervisor               |
+       |  (defines/refines graph)        |
+       +---------------+----------------+ 
+                       | edits .yggdrasil/ files
+                       v
+       +---------------------------------+
+       |        Graph                    |
+       |  (node.yaml + artifacts)        |
+       +---------------+----------------+
+                       | ygg build-context
+                       v
+       +---------------------------------+
+       |     Context Package             |
+       |  (single document)              |
+       +---------------+----------------+
+                       | agent reads and implements
+                       v
+       +---------------------------------+
+       |     Code + Tests                |
+       |  (written to mapping path)    |
+       +---------------+----------------+
+                       | run tests
+                       v
+       +---------------------------------+
+       |     Test Results                |
+       +---------------+----------------+
+                       |
+               +-------+-------+
+               |               |
+            PASS            FAIL
+               |               |
+            Done    Supervisor refines graph
+                    (does NOT edit code)
+                            |
+                            +-> back to top
 ```
 
 When tests fail, the fix is **always** in the graph — not in the code. The supervisor adds more detail, splits the node, adds constraints, clarifies the description. Then rematerializes. This loop continues until the output is satisfactory.

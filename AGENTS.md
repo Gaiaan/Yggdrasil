@@ -40,3 +40,13 @@ To add support for a new agent:
 ## Command File Format
 
 See `docs/agent-commands.md` for the full specification of each command's content.
+
+## Docs Changes
+
+When modifying files in `docs/` or any `*.md` in the repo, always run the markdown linter afterward:
+
+```bash
+npx markdownlint-cli2 "**/*.md" ".markdownlint-cli2.jsonc"
+```
+
+Fix any reported issues before finishing. This prevents CI failures from markdown lint.

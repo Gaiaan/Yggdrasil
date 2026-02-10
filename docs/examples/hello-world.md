@@ -18,14 +18,14 @@ A minimal Yggdrasil graph demonstrating core concepts: nodes, artifacts, relatio
 
 ```
 Hello World App
-├── auth/ (module) [requires-auth]
-│   └── token-service/ (service)
-│       └── mapping: src/auth/token.service.ts
-├── users/ (module)
-│   └── user-repository/ (service)
-│       └── mapping: src/users/user.repository.ts
-└── greeting/ (service) [public-api, requires-auth]
-    └── mapping: src/greeting/greeting.service.ts
+  auth/ (module) [requires-auth]
+    token-service/ (service)
+      mapping: src/auth/token.service.ts
+  users/ (module)
+    user-repository/ (service)
+      mapping: src/users/user.repository.ts
+  greeting/ (service) [public-api, requires-auth]
+    mapping: src/greeting/greeting.service.ts
 ```
 
 ## CLI Commands to Try

@@ -5,23 +5,23 @@ Yggdrasil operates on two distinct planes: the **graph** and the **code**. Under
 ## The Two Worlds
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                    THE GRAPH                          │
-│                                                      │
-│  Editable by supervisor (human or AI agent)          │
-│  Versioned with git (branch, diff, merge)            │
-│  Directory hierarchy of nodes + artifacts             │
-│                                                      │
-│  ════════════════ BARRIER ═══════════════════════     │
-│           (one-directional materialization)            │
-│                                                      │
-│                    THE CODE                            │
-│                                                      │
-│  Generated from the graph via materialization         │
-│  Should not be edited directly                        │
-│  Tests derived from graph verify correctness          │
-│                                                      │
-└─────────────────────────────────────────────────────┘
++-----------------------------------------------------+
+|                    THE GRAPH                         |
+|                                                      |
+|  Editable by supervisor (human or AI agent)          |
+|  Versioned with git (branch, diff, merge)             |
+|  Directory hierarchy of nodes + artifacts            |
+|                                                      |
+|  ================= BARRIER =================         |
+|           (one-directional materialization)          |
+|                                                      |
+|                    THE CODE                           |
+|                                                      |
+|  Generated from the graph via materialization         |
+|  Should not be edited directly                       |
+|  Tests derived from graph verify correctness          |
+|                                                      |
++-----------------------------------------------------+
 ```
 
 | The Graph | The Code |

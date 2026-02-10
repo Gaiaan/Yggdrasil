@@ -3,9 +3,9 @@
 The pipeline from requirements to running code. Use what you need — not every change requires every stage.
 
 ```
-brief → clarify → plan → check → apply → materialize
-                                              ↑
-                                           drift ←── (continuous)
+brief -> clarify -> plan -> check -> apply -> materialize
+                                              ^
+                                           drift <-- (continuous)
 ```
 
 For **brownfield adoption**, an alternative entry point exists: `/ygg.ingest` reads existing code and creates blackbox graph nodes. From there, the standard pipeline applies. See [Adoption Guide](/adoption-guide).

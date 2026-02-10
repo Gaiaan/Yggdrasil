@@ -18,14 +18,14 @@ A blog-shop example: e-commerce landing with coffee products, blog posts, curios
 
 ```
 Coffee Shop — Blog & Store
-├── auth/session-service/
-├── catalog/product-repository/
-├── content/post-repository, curiosity-repository/
-├── shop-settings/settings-repository/
-├── orders/order-repository/
-├── storefront/ (landing, products, blog, curiosities, cart, checkout)
-├── cms/ (admin layout, login, product/post/curiosities/settings editors)
-└── flows/checkout-flow/
+  auth/session-service/
+  catalog/product-repository/
+  content/post-repository, curiosity-repository/
+  shop-settings/settings-repository/
+  orders/order-repository/
+  storefront/ (landing, products, blog, curiosities, cart, checkout)
+  cms/ (admin layout, login, product/post/curiosities/settings editors)
+  flows/checkout-flow/
 ```
 
 ## CLI Commands to Try
