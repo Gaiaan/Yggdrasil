@@ -26,4 +26,4 @@ Returns `{ issues: ValidationIssue[], nodesScanned: number }` where each issue h
 - Issues have severity: `error` (rules 1-8) or `warning` (rule 9)
 - Returns all issues, does not stop at first failure
 
-Full specification: `documentation/06-cli-reference.md` (ygg check section)
+Full specification: `docs/cli-reference.md` (ygg check section)

@@ -103,8 +103,7 @@ Agent commands:      /ygg.brief | /ygg.clarify | /ygg.plan | /ygg.apply | /ygg.m
 
 ## Documentation
 
-- **User docs:** [docs/](docs/) — guides and CLI reference (VitePress site)
-- **Specification:** [documentation/](documentation/) — full design and concepts
+- **Docs:** [docs/](docs/) — guides, CLI reference, and full design (VitePress site)
 - **Example project:** [examples/hello-world/](examples/hello-world/) — minimal graph you can try immediately
 
 ## Contributing

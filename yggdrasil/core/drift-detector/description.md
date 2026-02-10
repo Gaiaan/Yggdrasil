@@ -35,4 +35,4 @@ Supports multi-file mappings: hashes each file independently, reports drift per 
 - Drift state stored in `.yggdrasil/.drift-state` (YAML format)
 - `filterNodePath` parameter limits detection to a single node
 
-Full specification: `documentation/09-drift-detection.md`
+Full specification: `docs/spec/drift-detection.md`

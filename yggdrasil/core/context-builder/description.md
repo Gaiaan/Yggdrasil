@@ -33,4 +33,4 @@ Exported helpers (used by validator for budget checks):
 - Token count estimated via `estimateTokens()` from utils/tokens
 - Throws if node not found or if a relation target is missing
 
-Full specification: `documentation/04-context-builder.md`
+Full specification: `docs/spec/context-builder.md`

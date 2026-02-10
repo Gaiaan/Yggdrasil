@@ -23,4 +23,4 @@ Orchestrates loading the entire graph from the file system into a `Graph` data s
 - Parent-child relationships are set via `node.parent` and `node.children` references
 - Throws if .yggdrasil/ directory or config.yaml is not found
 
-Full specification: `documentation/03-graph-structure.md`
+Full specification: `docs/graph-guide.md`

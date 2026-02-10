@@ -1,7 +1,7 @@
 {
   "folders": [
     { "name": "Root", "path": "." },
-    { "name": "📜 Documentation", "path": "documentation" },
+    { "name": "📜 Documentation", "path": "docs" },
     { "name": "🧪 Examples", "path": "examples" },
     { "name": "🧱 Source", "path": "source" },
   ],

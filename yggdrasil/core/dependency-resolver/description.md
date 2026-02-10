@@ -28,4 +28,4 @@ ResolveOptions: `{ mode: 'all' | 'changed' | 'node', nodePath?: string }`
 - `findChangedNodes` compares file modification times recursively (graph dir vs mapped code)
 - Cycle detection throws with the cycle path in the error message
 
-Full specification: `documentation/08-materialization.md` (dependency ordering section)
+Full specification: `docs/spec/materialization.md` (dependency ordering section)

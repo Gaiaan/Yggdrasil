@@ -30,10 +30,10 @@ standards:
     PascalCase for types and interfaces.
     kebab-case for file names and directories.
   specification: |
-    Full design specification lives in documentation/ (10 documents).
-    Before making major changes to a module, read the relevant specification document.
-    Key documents: 03-graph-structure.md, 04-context-builder.md, 06-cli-reference.md,
-    07-agent-commands.md, 08-materialization.md, 09-drift-detection.md.
+    Full design documentation lives in docs/ (guides + spec/).
+    Before making major changes to a module, read the relevant documentation page.
+    Key pages: graph-guide.md, spec/context-builder.md, cli-reference.md,
+    agent-commands.md, spec/materialization.md, spec/drift-detection.md.
 
 limits:
   context_warning_tokens: 8000

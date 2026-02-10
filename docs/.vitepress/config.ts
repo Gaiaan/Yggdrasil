@@ -20,11 +20,14 @@ export default defineConfig({
         ],
       },
       {
-        text: "Concepts",
+        text: "Guide",
         items: [
           { text: "Core Concepts", link: "/concepts" },
           { text: "Building a Graph", link: "/graph-guide" },
           { text: "Workflow", link: "/workflow" },
+          { text: "Agent Walkthrough", link: "/agent-walkthrough" },
+          { text: "Adoption Guide", link: "/adoption-guide" },
+          { text: "FAQ", link: "/faq" },
         ],
       },
       {
@@ -35,10 +38,13 @@ export default defineConfig({
         ],
       },
       {
-        text: "Adoption",
+        text: "Specification",
+        collapsed: true,
         items: [
-          { text: "Adoption Guide", link: "/adoption-guide" },
-          { text: "FAQ", link: "/faq" },
+          { text: "Vision and Motivation", link: "/spec/vision" },
+          { text: "Context Builder", link: "/spec/context-builder" },
+          { text: "Materialization", link: "/spec/materialization" },
+          { text: "Drift Detection", link: "/spec/drift-detection" },
         ],
       },
     ],

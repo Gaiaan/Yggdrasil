@@ -1,4 +1,4 @@
-# 04 — Context Builder: Assembling the Right Context
+# Context Builder: Assembling the Right Context
 
 ## Purpose
 

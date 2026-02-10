@@ -15,7 +15,7 @@ breaking change with no backward-compatibility or migration concerns.
 - Update `findYggRoot()` in `source/cli/src/utils/paths.ts` to look for `.yggdrasil/`
 - Update `ygg init` to create `.yggdrasil/` instead of `yggdrasil/`
 - Update all CLI code, tests, fixtures, and e2e tests referencing `yggdrasil/`
-- Update documentation (all 10 spec docs + README + CONTRIBUTING)
+- Update documentation (all pages in `docs/` + README + CONTRIBUTING)
 - Update agent command templates that reference the directory name
 - Update the example project (`examples/hello-world/`)
 - Rename the self-graph directory from `yggdrasil/` to `.yggdrasil/`

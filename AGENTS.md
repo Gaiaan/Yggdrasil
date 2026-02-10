@@ -39,4 +39,4 @@ To add support for a new agent:
 
 ## Command File Format
 
-See `documentation/07-agent-commands.md` for the full specification of each command's content.
+See `docs/agent-commands.md` for the full specification of each command's content.

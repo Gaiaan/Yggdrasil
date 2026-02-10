@@ -1,4 +1,4 @@
-# 08 — Materialization: From Graph to Code
+# Materialization: From Graph to Code
 
 ## What Materialization Is
 

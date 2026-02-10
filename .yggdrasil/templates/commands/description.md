@@ -30,4 +30,4 @@ Each command markdown file has:
 
 `$ARGUMENTS` in command text is replaced by the agent-specific argument syntax during adapter conversion.
 
-Full specification: `documentation/07-agent-commands.md`
+Full specification: `docs/agent-commands.md`

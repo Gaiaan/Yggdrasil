@@ -4,7 +4,7 @@
 
 `ygg build-context` scales to any graph size — it produces bounded context
 packages regardless of whether the graph has 10 or 10,000 nodes. This is
-by design (doc 04).
+by design (see `docs/spec/context-builder.md`).
 
 However, `ygg tree` has no such bound. It dumps the entire graph structure
 to stdout. This matters because AI agents use `ygg tree` as the **first step**

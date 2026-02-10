@@ -9,7 +9,7 @@ Agent command templates and format adapters.
 
 Each command has: frontmatter (description, handoffs, cli_tools), Context, Workflow, Rules sections.
 
-Full specification: `documentation/07-agent-commands.md`
+Full specification: `docs/agent-commands.md`
 
 ## Adapters (source/cli/src/templates/adapters/)
 

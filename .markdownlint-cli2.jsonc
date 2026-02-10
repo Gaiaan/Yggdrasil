@@ -5,7 +5,8 @@
     "MD033": false,
     "MD041": false,
     "MD060": false,
-    "MD040": false
+    "MD040": false,
+    "MD028": false
   },
   "ignores": ["node_modules", "**/node_modules/**", "**/dist/**", "_baseline/**", "CHANGELOG.md"]
 }

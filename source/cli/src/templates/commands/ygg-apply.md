@@ -31,7 +31,7 @@ This is the command that actually changes the graph.
    a. Update `node.yaml` as needed
    b. Update or create artifacts as specified
 
-4. If the plan specifies documentation changes (e.g. in `documentation/`, `docs/`,
+4. If the plan specifies documentation changes (e.g. in `docs/`,
    or agent command templates in `source/cli/src/templates/commands/`), apply
    those changes too. Keep documentation consistent with graph and command changes.
 

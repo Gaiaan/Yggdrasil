@@ -17,11 +17,11 @@ cd my-project
 ygg init --agent cursor
 ```
 
-This creates the `yggdrasil/` directory and installs agent commands for your AI assistant. Choose `claude`, `cursor`, `copilot`, or `gemini` for `--agent`.
+This creates the `.yggdrasil/` directory and installs agent commands for your AI assistant. Choose `claude`, `cursor`, `copilot`, or `gemini` for `--agent`.
 
 ## 3. Configure
 
-Edit `yggdrasil/config.yaml` to set your project name, tech stack, and coding standards:
+Edit `.yggdrasil/config.yaml` to set your project name, tech stack, and coding standards:
 
 ```yaml
 name: "My E-Commerce System"
@@ -42,10 +42,10 @@ standards:
 Create a node directory with metadata and description:
 
 ```bash
-mkdir -p yggdrasil/orders/order-service
+mkdir -p .yggdrasil/orders/order-service
 ```
 
-**yggdrasil/orders/order-service/node.yaml:**
+**.yggdrasil/orders/order-service/node.yaml:**
 
 ```yaml
 name: OrderService
@@ -59,7 +59,7 @@ mapping:
   path: src/modules/orders/order.service.ts
 ```
 
-**yggdrasil/orders/order-service/description.md:**
+**.yggdrasil/orders/order-service/description.md:**
 
 ```markdown
 # OrderService

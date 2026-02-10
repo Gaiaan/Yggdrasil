@@ -1,4 +1,4 @@
-# 09 — Drift Detection: Keeping Graph and Code in Sync
+# Drift Detection: Keeping Graph and Code in Sync
 
 ## What Drift Is
 

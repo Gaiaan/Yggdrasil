@@ -1,4 +1,4 @@
-# 01 — Vision and Motivation
+# Vision and Motivation
 
 ## The Problem
 
