@@ -1,0 +1,4 @@
+name: PathUtils
+type: utility
+mapping:
+  path: source/cli/src/utils/paths.ts

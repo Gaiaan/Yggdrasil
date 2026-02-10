@@ -1,0 +1,6 @@
+name: Checkout Flow
+
+nodes:
+  - auth/auth-api
+  - orders/order-service
+  - users/user-repo

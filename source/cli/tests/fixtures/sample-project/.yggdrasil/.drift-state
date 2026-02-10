@@ -1,0 +1,18 @@
+# .yggdrasil/.drift-state (auto-generated, do not edit manually)
+entries:
+  auth/login-service:
+    path: src/auth/login.service.ts
+    hash: sha256:5d5bbfd0dc749783000cff2f27ca31212044629a99746a8508d32b3f8ec7c344
+    materialized_at: 2026-02-10T12:00:00Z
+  orders/order-service:
+    path: src/orders/order.service.ts
+    hash: sha256:6a9fbc936c3448938fb8d064205186b18bd3adb14ba0a523a8e58e21d21b08d9
+    materialized_at: 2026-02-10T12:00:00Z
+  users/user-repo:
+    path: src/users/user.repository.ts
+    hash: sha256:da22ab3ea28c2090fc0bf04824609ae017f37cc15811efe0466b0f033b0db162
+    materialized_at: 2026-02-10T12:00:00Z
+  users/missing-service:
+    path: src/users/missing.service.ts
+    hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+    materialized_at: 2026-02-10T12:00:00Z

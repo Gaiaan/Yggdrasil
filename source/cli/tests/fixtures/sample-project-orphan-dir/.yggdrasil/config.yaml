@@ -1,0 +1,8 @@
+name: Orphan Dir Test
+stack:
+  language: TypeScript
+standards: {}
+tags:
+  valid-tag:
+    description: A valid tag
+    propagates: false

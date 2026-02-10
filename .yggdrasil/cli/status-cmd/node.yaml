@@ -1,0 +1,9 @@
+name: StatusCommand
+type: command
+tags:
+  - cli-command
+relations:
+  - target: core/drift-detector
+    type: uses
+mapping:
+  path: source/cli/src/cli/status.ts

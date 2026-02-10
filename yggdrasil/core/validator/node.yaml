@@ -1,0 +1,9 @@
+name: Validator
+type: engine
+tags:
+  - core-engine
+relations:
+  - target: core/context-builder
+    type: uses
+mapping:
+  path: source/cli/src/core/validator.ts

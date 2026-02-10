@@ -1,0 +1,11 @@
+name: DriftDetector
+type: engine
+tags:
+  - core-engine
+relations:
+  - target: io/drift-state-store
+    type: uses
+  - target: utils/hash
+    type: uses
+mapping:
+  path: source/cli/src/core/drift-detector.ts

@@ -1,0 +1,9 @@
+name: TokenService
+type: service
+
+relations:
+  - target: users/user-repository
+    type: reads
+
+mapping:
+  path: src/auth/token.service.ts

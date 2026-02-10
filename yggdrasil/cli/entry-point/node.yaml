@@ -1,0 +1,6 @@
+name: CLI Entry Point
+type: config
+tags:
+  - cli-command
+mapping:
+  path: source/cli/src/bin.ts

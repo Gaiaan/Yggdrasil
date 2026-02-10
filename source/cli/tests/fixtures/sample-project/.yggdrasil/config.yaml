@@ -1,0 +1,29 @@
+name: "Sample E-Commerce System"
+
+stack:
+  language: TypeScript
+  runtime: Node 22
+  framework: NestJS
+  database: PostgreSQL
+
+standards:
+  coding: |
+    ESLint + Prettier configuration.
+    Clean Architecture pattern.
+  testing: |
+    Jest as test framework.
+    Test coverage target: 80%.
+
+limits:
+  context_warning_tokens: 8000
+
+tags:
+  requires-auth:
+    description: "Node requires authentication"
+    propagates: false
+  requires-audit:
+    description: "Operations must be logged to audit trail"
+    propagates: true
+  public-api:
+    description: "Public-facing API endpoint"
+    propagates: false

@@ -1,0 +1,5 @@
+name: UserRepository
+type: service
+
+mapping:
+  path: src/users/user.repository.ts

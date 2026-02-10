@@ -1,0 +1,9 @@
+name: ContextBuilder
+type: engine
+tags:
+  - core-engine
+relations:
+  - target: utils/tokens
+    type: uses
+mapping:
+  path: source/cli/src/core/context-builder.ts

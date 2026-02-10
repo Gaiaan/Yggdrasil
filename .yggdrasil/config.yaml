@@ -1,0 +1,50 @@
+name: "Yggdrasil CLI"
+
+stack:
+  language: "TypeScript (strict mode, ESM)"
+  runtime: "Node.js 22+"
+  build: "tsup (single ESM bundle → dist/bin.js)"
+  test: "vitest (v8 coverage provider)"
+  cli_framework: "Commander.js"
+  yaml_parser: "yaml (YAML 1.2)"
+  terminal: "chalk (colored output)"
+  tokens: "js-tiktoken (GPT-4 tokenizer with char-based fallback)"
+
+standards:
+  coding: |
+    ESM modules — import/export, never require().
+    Strict TypeScript — no implicit any, no unused vars (except _prefixed).
+    Pure functions where possible — parsers take a path, return typed data.
+    Async/await for all file operations.
+    Chalk for colored terminal output.
+    Exit codes: 0 = success, 1 = logical error, 2 = structural error.
+  testing: |
+    Vitest with v8 coverage provider.
+    Unit tests in tests/unit/ mirroring src/ structure.
+    Integration tests in tests/integration/ (pipeline tests).
+    E2E tests in tests/e2e/ (CLI as subprocess).
+    Fixtures in tests/fixtures/sample-project/.
+    Coverage target: 80%+ (currently 100% statements).
+  naming: |
+    camelCase for functions and variables.
+    PascalCase for types and interfaces.
+    kebab-case for file names and directories.
+  specification: |
+    Full design specification lives in documentation/ (10 documents).
+    Before making major changes to a module, read the relevant specification document.
+    Key documents: 03-graph-structure.md, 04-context-builder.md, 06-cli-reference.md,
+    07-agent-commands.md, 08-materialization.md, 09-drift-detection.md.
+
+limits:
+  context_warning_tokens: 8000
+
+tags:
+  pure-parser:
+    description: "Pure parsing function: file path in, typed data structure out. No side effects beyond file read."
+    propagates: false
+  core-engine:
+    description: "Core business logic engine. Operates on the Graph type, produces derived data structures."
+    propagates: false
+  cli-command:
+    description: "Thin CLI wrapper using Commander.js. Parses args, delegates to core/formatters, handles stdout/stderr and exit codes."
+    propagates: false

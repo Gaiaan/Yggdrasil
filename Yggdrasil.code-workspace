@@ -1,0 +1,53 @@
+{
+  "folders": [
+    { "name": "Root", "path": "." },
+    { "name": "📜 Documentation", "path": "documentation" },
+    { "name": "🧪 Examples", "path": "examples" },
+    { "name": "🧱 Source", "path": "source" },
+  ],
+  "settings": {
+    "cSpell.words": [
+      "bierner",
+      "blackbox",
+      "davidanson",
+      "dind",
+      "gaiaan",
+      "Gaiaan",
+      "materialize",
+      "moby",
+      "rematerialize",
+      "tiktoken",
+      "yggdrasil",
+      "yzhang",
+    ],
+    "files.exclude": {
+      "**/.git": false,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+    },
+    "chat.promptFilesRecommendations": {
+      "ygg.brief": true,
+      "ygg.plan": true,
+      "ygg.apply": true,
+      "ygg.materialize": true,
+      "ygg.check": true,
+    },
+    "chat.tools.terminal.autoApprove": {
+      "source/cli/": true,
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "streetsidesoftware.code-spell-checker",
+      "EditorConfig.EditorConfig",
+      "github.vscode-github-actions",
+      "GitHub.vscode-pull-request-github",
+      "yzhang.markdown-all-in-one",
+      "bierner.markdown-mermaid",
+      "MermaidChart.vscode-mermaid-chart",
+      "DotJoshJohnson.xml",
+      "redhat.vscode-yaml",
+      "davidanson.vscode-markdownlint",
+    ],
+  },
+}
