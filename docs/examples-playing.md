@@ -24,6 +24,7 @@ A practical guide to exploring Yggdrasil using the example projects. No prior se
 ## Adding a Feature: Example
 
 The owner of the coffee shop wants:
+
 - **Product categories** — products belong to categories (e.g. Beans, Accessories)
 - **Order notification bell** — in the admin panel, a bell icon with a counter of new orders since last visit
 
@@ -54,6 +55,7 @@ The owner of the coffee shop wants:
 ### What the Agent Sees
 
 For `cms/order-notification-bell`, the agent receives:
+
 - **Global context** — Next.js, TypeScript, SQLite
 - **CMS module context** — admin panel, auth
 - **Node description** — "Bell icon in admin header, shows count of orders with status 'pending' or created since last admin visit"
