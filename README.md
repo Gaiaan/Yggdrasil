@@ -15,6 +15,8 @@
 
 Yggdrasil improves **AI-assisted coding** for both **greenfield** (new projects) and **brownfield** (existing codebases). It introduces a formal graph layer between human intent and generated code — so the agent sees exactly the right context instead of drowning in the whole codebase.
 
+**Context management** is the core: `ygg build-context` assembles a **context package** for each node — a single document from six layers (global, hierarchy, own, relations, aspects, flows). The agent receives this and nothing else: bounded, precise, complete. A 2,000-token context package beats a 200,000-token codebase dump. See [Context Builder](https://gaiaan.github.io/Yggdrasil/spec/context-builder) for how it works.
+
 You work mainly through **agent commands** (`/ygg.materialize`, `/ygg.brief`, `/ygg.plan`, etc.) in your AI assistant (Cursor, Claude Code, Gemini CLI, Copilot). The agent reads these commands and uses the **CLI** (`ygg`) as a helper: build-context, resolve-deps, check, drift — pure mechanical operations with no API keys.
 
 The graph lives in `.yggdrasil/` (directories = nodes, files = specs). It is the **single source of truth** — a formal "map" of the system (modules, interfaces, relations, constraints) that survives sessions and scales with verification. You edit the graph; the agent materializes code from it. Quality of output is a function of graph quality, not codebase size.
@@ -121,6 +123,7 @@ Then add a feature: edit the graph (e.g. new node for product categories), run `
 ## Documentation
 
 - **Docs:** [https://gaiaan.github.io/Yggdrasil/](https://gaiaan.github.io/Yggdrasil/) — guides, CLI reference, and full design
+- **Context Builder:** [spec/context-builder](https://gaiaan.github.io/Yggdrasil/spec/context-builder) — how context packages are assembled
 - **Vision:** [https://gaiaan.github.io/Yggdrasil/spec/vision.html](https://gaiaan.github.io/Yggdrasil/spec/vision.html) — problem, thesis, value for greenfield & brownfield
 - **Examples:** [examples/hello-world/](examples/hello-world/), [examples/coffee-shop/](examples/coffee-shop/) — minimal graphs to try
 
