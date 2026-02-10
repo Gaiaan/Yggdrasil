@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing to Yggdrasil!
 
+Questions? Email <me@gaiaan.com>.
+
 ## Prerequisites
 
 - Node.js 22+

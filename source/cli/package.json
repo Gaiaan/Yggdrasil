@@ -32,11 +32,12 @@
     "architecture",
     "cli"
   ],
-  "author": "Gaiaan",
+  "author": "Gaiaan <me@gaiaan.com>",
   "license": "MIT",
   "homepage": "https://github.com/Gaiaan/Yggdrasil#readme",
   "bugs": {
-    "url": "https://github.com/Gaiaan/Yggdrasil/issues"
+    "url": "https://github.com/Gaiaan/Yggdrasil/issues",
+    "email": "me@gaiaan.com"
   },
   "repository": {
     "type": "git",
