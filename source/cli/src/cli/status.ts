@@ -7,7 +7,8 @@ export function registerStatusCommand(program: Command): void {
   program
     .command('status')
     .description('Show graph summary')
-    .action(async () => {
+    .option('--format <format>', 'Output format: text or json', 'text')
+    .action(async (options: { format: string }) => {
       try {
         const graph = await loadGraph(process.cwd());
 
@@ -34,7 +35,41 @@ export function registerStatusCommand(program: Command): void {
           for (const tag of node.meta.tags ?? []) usedTags.add(tag);
         }
 
-        // Output
+        // Drift summary
+        const drift = await detectDrift(graph);
+        const okCount = drift.entries.filter((e) => e.status === 'ok').length;
+        const driftCount = drift.driftCount;
+        const unmaterialized = drift.entries.filter((e) => e.status === 'unmaterialized').length;
+
+        if (options.format === 'json') {
+          const typeCountsObj = Object.fromEntries(typeCounts);
+          const output = {
+            graph: graph.config.name,
+            stack: graph.config.stack ?? {},
+            nodes: {
+              total: graph.nodes.size,
+              byType: typeCountsObj,
+              blackbox: blackboxCount,
+              mapped: mappedCount,
+            },
+            tags: {
+              defined: Object.keys(graph.config.tags ?? {}).length,
+              inUse: usedTags.size,
+            },
+            aspects: graph.aspects.length,
+            flows: graph.flows.length,
+            relations: relationCount,
+            drift: {
+              upToDate: okCount,
+              drift: driftCount,
+              unmaterialized,
+            },
+          };
+          process.stdout.write(JSON.stringify(output, null, 2));
+          return;
+        }
+
+        // Text output
         process.stdout.write(`Graph: ${graph.config.name}\n`);
         const stackEntries = Object.entries(graph.config.stack ?? {});
         if (stackEntries.length > 0) {
@@ -55,11 +90,6 @@ export function registerStatusCommand(program: Command): void {
         process.stdout.write(`Relations:  ${relationCount} total\n`);
         process.stdout.write(`Mappings:   ${mappedCount} nodes mapped to code\n`);
 
-        // Drift summary
-        const drift = await detectDrift(graph);
-        const okCount = drift.entries.filter((e) => e.status === 'ok').length;
-        const driftCount = drift.driftCount;
-        const unmaterialized = drift.entries.filter((e) => e.status === 'unmaterialized').length;
         process.stdout.write('\nDrift:\n');
         if (okCount > 0) process.stdout.write(chalk.green(`  ✓ ${okCount} up to date\n`));
         if (driftCount > 0) process.stdout.write(chalk.red(`  ✗ ${driftCount} nodes have drift\n`));

@@ -1,9 +1,9 @@
 ---
-description: "Analyze a brief and ask clarifying questions"
+description: 'Analyze a brief and ask clarifying questions'
 handoffs:
   - command: /ygg.plan
-    label: "Plan graph changes"
-    prompt: "Run /ygg.plan to propose graph changes."
+    label: 'Plan graph changes'
+    prompt: 'Run /ygg.plan to propose graph changes.'
 cli_tools: []
 ---
 

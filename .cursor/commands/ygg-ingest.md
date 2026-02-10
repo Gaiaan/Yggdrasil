@@ -1,9 +1,9 @@
 ---
-description: "Ingest existing code into the graph as blackbox nodes"
+description: 'Ingest existing code into the graph as blackbox nodes'
 handoffs:
   - command: /ygg.plan
-    label: "Plan changes"
-    prompt: "Run /ygg.plan to plan changes using the ingested graph."
+    label: 'Plan changes'
+    prompt: 'Run /ygg.plan to plan changes using the ingested graph.'
 cli_tools:
   - ygg check
 ---
@@ -36,7 +36,7 @@ context for future work.
    - "SMS sending" (SmsService + related helpers)
    - "Queue handling" (Publisher + Consumer)
    - "Template management" (Engine + Repository)
-   A good grouping produces 5-15 nodes for a typical module.
+     A good grouping produces 5-15 nodes for a typical module.
 
 4. For each proposed node, prepare:
    - `node.yaml` with `blackbox: true`, mapping to actual source files

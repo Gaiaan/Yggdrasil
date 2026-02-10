@@ -1,12 +1,12 @@
 ---
-description: "Detect code changes made outside the graph"
+description: 'Detect code changes made outside the graph'
 handoffs:
   - command: /ygg.materialize
-    label: "Rematerialize (reject)"
-    prompt: "Run /ygg.materialize to restore code from graph."
+    label: 'Rematerialize (reject)'
+    prompt: 'Run /ygg.materialize to restore code from graph.'
   - command: /ygg.apply
-    label: "Update graph (absorb)"
-    prompt: "Update the graph artifacts to reflect the code change."
+    label: 'Update graph (absorb)'
+    prompt: 'Update the graph artifacts to reflect the code change.'
 cli_tools:
   - ygg drift
 ---

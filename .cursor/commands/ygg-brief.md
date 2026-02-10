@@ -1,12 +1,12 @@
 ---
-description: "Gather requirements and create a brief for graph changes"
+description: 'Gather requirements and create a brief for graph changes'
 handoffs:
   - command: /ygg.clarify
-    label: "Clarify the brief"
-    prompt: "Run /ygg.clarify to resolve ambiguities in this brief."
+    label: 'Clarify the brief'
+    prompt: 'Run /ygg.clarify to resolve ambiguities in this brief.'
   - command: /ygg.plan
-    label: "Plan graph changes"
-    prompt: "Run /ygg.plan to propose graph changes based on this brief."
+    label: 'Plan graph changes'
+    prompt: 'Run /ygg.plan to propose graph changes based on this brief.'
 cli_tools: []
 ---
 
@@ -34,11 +34,11 @@ bug report, or idea that should be processed through the Yggdrasil graph.
      what exactly changes in each?)
    - There are **architectural choices that could go either way**
      (separate page vs. modal, client state vs. server state, etc.)
-   For each question, provide a **recommended answer** based on common
-   practice so the user can accept defaults quickly ("I recommend X because Y.
-   Want to go with that?").
-   If the user's description is already precise on all of these, say so
-   and skip to step 4.
+     For each question, provide a **recommended answer** based on common
+     practice so the user can accept defaults quickly ("I recommend X because Y.
+     Want to go with that?").
+     If the user's description is already precise on all of these, say so
+     and skip to step 4.
 
 4. Save the brief to `.yggdrasil/.briefs/<slug>.md` where slug is a
    short kebab-case name derived from the description.

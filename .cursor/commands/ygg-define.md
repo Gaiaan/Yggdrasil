@@ -1,9 +1,9 @@
 ---
-description: "Define or edit a graph node conversationally"
+description: 'Define or edit a graph node conversationally'
 handoffs:
   - command: /ygg.materialize
-    label: "Materialize"
-    prompt: "Run /ygg.materialize to generate code for this node."
+    label: 'Materialize'
+    prompt: 'Run /ygg.materialize to generate code for this node.'
 cli_tools:
   - ygg check
 ---

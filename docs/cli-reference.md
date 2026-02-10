@@ -239,9 +239,14 @@ Summary of graph state.
 
 ```bash
 ygg status
+ygg status --format json
 ```
 
-**Example output:**
+| Option | Default | Description |
+|---|---|---|
+| `--format` | `text` | `text` or `json` |
+
+**Example output (text):**
 
 ```
 Graph: My E-Commerce System
@@ -260,6 +265,21 @@ Materialization:
 
 Drift:
   ✗ 1 node has code drift
+```
+
+**Example output (json):**
+
+```json
+{
+  "graph": "My E-Commerce System",
+  "stack": { "language": "TypeScript", "runtime": "Node 22", "framework": "NestJS" },
+  "nodes": { "total": 23, "byType": { "module": 5, "service": 12, "interface": 4, "model": 2 }, "blackbox": 0, "mapped": 15 },
+  "tags": { "defined": 4, "inUse": 3 },
+  "aspects": 2,
+  "flows": 1,
+  "relations": 18,
+  "drift": { "upToDate": 12, "drift": 1, "unmaterialized": 1 }
+}
 ```
 
 ---

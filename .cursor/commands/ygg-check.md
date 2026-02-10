@@ -1,9 +1,9 @@
 ---
-description: "Validate graph consistency"
+description: 'Validate graph consistency'
 handoffs:
   - command: /ygg.apply
-    label: "Fix issues"
-    prompt: "Fix the issues found by ygg check."
+    label: 'Fix issues'
+    prompt: 'Fix the issues found by ygg check.'
 cli_tools:
   - ygg check
 ---
