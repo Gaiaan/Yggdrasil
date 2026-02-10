@@ -5,6 +5,7 @@ export default defineConfig({
   title: "Yggdrasil",
   description: "Graph-Driven Software Development",
   themeConfig: {
+    logo: "/logo.svg",
     nav: [
       { text: "Guide", link: "/getting-started" },
       { text: "CLI Reference", link: "/cli-reference" },

@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/public/logo.svg" alt="Yggdrasil" width="128" />
+</div>
+
 # Yggdrasil
 
 > Graph-driven software development — a formal graph layer between human intent and generated code.

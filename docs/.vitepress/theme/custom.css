@@ -1,0 +1,21 @@
+/* Gaiaan palette - kolory z landinga */
+:root {
+  --gaiaan-emerald-green: #3a5a4d;
+  --gaiaan-wasabi: #809076;
+  --gaiaan-creased-khaki: #f8d794;
+  --gaiaan-noir-de-vigne: #1f2629;
+  --gaiaan-egyptian-earth: #284139;
+}
+
+/* Akcenty kolorów Gaiaan */
+:root {
+  --vp-c-brand-1: var(--gaiaan-emerald-green);
+  --vp-c-brand-2: #4a6a5d;
+  --vp-c-brand-3: #5a7a6d;
+}
+
+.dark {
+  --vp-c-brand-1: var(--gaiaan-creased-khaki);
+  --vp-c-brand-2: #fadea8;
+  --vp-c-brand-3: #fce8c4;
+}
