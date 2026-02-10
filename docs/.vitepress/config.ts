@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+  base: "/Yggdrasil/",
   title: "Yggdrasil",
   description: "Graph-Driven Software Development",
   themeConfig: {
