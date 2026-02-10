@@ -167,7 +167,7 @@ The node is now flagged as DRIFT. In a real workflow, you would either:
 **Clean up:**
 
 ```bash
-rm -rf src yggdrasil/.drift-state
+rm -rf src .yggdrasil/.drift-state
 ```
 
 ## 8. Initialize a new project
@@ -182,13 +182,13 @@ ygg init --agent cursor
 
 This creates:
 
-- `yggdrasil/` with `config.yaml`, `aspects/`, `flows/`, `.briefs/`
+- `.yggdrasil/` with `config.yaml`, `aspects/`, `flows/`, `.briefs/`
 - `.cursor/commands/ygg-*.md` — agent command files
 
 Inspect the results:
 
 ```bash
-ls yggdrasil/
+ls .yggdrasil/
 ls .cursor/commands/
 ```
 
